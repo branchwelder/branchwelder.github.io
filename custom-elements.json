@@ -1,0 +1,96 @@
+{
+  "schemaVersion": "1.0.0",
+  "readme": "",
+  "modules": [
+    {
+      "kind": "javascript-module",
+      "path": "old/index.js",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/PortfolioIndex.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "PortfolioIndex",
+          "members": [
+            {
+              "kind": "field",
+              "name": "theme",
+              "type": {
+                "text": "string"
+              },
+              "default": "'nord'",
+              "privacy": "public",
+              "attribute": "theme"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "theme",
+              "fieldName": "theme"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "portfolio-index",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "PortfolioIndex",
+          "declaration": {
+            "name": "PortfolioIndex",
+            "module": "src/PortfolioIndex.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/portfolio-index.js",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "portfolio-index",
+          "declaration": {
+            "name": "PortfolioIndex",
+            "module": "/src/PortfolioIndex.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/themes.js",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "themes",
+          "type": {
+            "text": "object"
+          },
+          "default": "{\n  'solarized-dark': {\n    '--pink': '#d33682',\n    '--red': '#dc322f',\n    '--orange': '#cb4b16',\n    '--yellow': '#b58900',\n    '--green': '#859900',\n    '--cyan': '#2aa198',\n    '--blue': '#268bd2',\n    '--purple': '#6c71c4',\n    '--base0': '#002b36',\n    '--base1': '#073642',\n  },\n  dracula: {\n    '--pink': '#ff79c6',\n    '--red': '#ff5555',\n    '--orange': '#ffad55',\n    '--yellow': '#f1fa8c',\n    '--green': '#50fa7b',\n    '--cyan': '#8be9fd',\n    '--blue': '#4395d4',\n    '--purple': '#9674c8',\n    '--base0': '#44475a',\n    '--base1': '#f8f8f2',\n  },\n  nord: {\n    '--base0': '#2e3440',\n    '--base1': '#3b4252',\n    '--base2': '#434c5e',\n    '--base3': '#4c566a',\n    '--base4': '#d8dee9',\n    '--base5': '#e5e9f0',\n    '--base6': '#eceff4',\n    '--red': '#bf616a',\n    '--orange': '#d08770',\n    '--yellow': '#ebcb8b',\n    '--green': '#a3be8c',\n    '--teal': '#8fbcbb',\n    '--cyan': '#88c0d0',\n    '--light-blue': '#81a1c1',\n    '--blue': '#5e81ac',\n    '--purple': '#b48ead',\n  },\n}"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "themes",
+          "declaration": {
+            "name": "themes",
+            "module": "src/themes.js"
+          }
+        }
+      ]
+    }
+  ]
+}

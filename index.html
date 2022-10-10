@@ -1,59 +1,43 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, maximum-scale=1.0" />
-  <title>hannah</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="Description" content="hannah's portfolio.">
   <link rel="apple-touch-icon" sizes="180x180" href="./public/favicon/apple-touch-icon.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="./public/favicon/favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="./public/favicon/favicon-16x16.png" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <link href="index.css" media="screen" rel="stylesheet" type="text/css" />
+  <base href="/">
+
+
+  <title>hannah</title>
 </head>
+<style>
+  @font-face {
+    font-family: "Inter";
+    src: url("./public/fonts/Inter-Variable.ttf");
+    font-weight: 1 999;
+  }
+
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Inter;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+</style>
 
 <body>
-  <h1>Hannah Twigg-Smith</h1>
-  <!-- <div class="header">
-    <img src="public/images/grid_painting.jpg" class="portrait" width=200></a>
-    <p class="bio">
-      I'm Hannah! I'm a PhD student in Human Centered Design and Engineering at the University of Washington. I work in
-      Nadya Peek's lab, Machine Agency. I'm work on tools for personal fabrication and automation, specifically the
-      software that allows us to tell machines what we want them to do.
-      <br>
-    </p>
-  </div> -->
-  <div>
-    <div class="assignment">
-      <a href="A1/a1.html">
-        <img src="public/images/grid_painting.jpg" width=200></a>
-      <p>
-      <h2>embroideries</h2>
-      </p>
-    </div>
-    <div class="assignment">
-      <a href="A2/a2.html">
-        <img src="public/images/grid_painting.jpg" width=200></a>
-      <p>
-      <h2>playdate</h2>
-      </p>
-    </div>
-    <div class="assignment">
-      <a href="A3/a3.html">
-        <img src="public/images/grid_painting.jpg" width=200></a>
-      <p>
-      <h2>PlotterTwitter</h2>
-      </p>
-    </div>
-    <div class="assignment">
-      <a href="A4/a4.html">
-        <img src="public/images/grid_painting.jpg" width=200></a>
-      <p>
-      <h2>Jubilee</h2>
-      </p>
-    </div>
-  </div>
-  <script type="module" src="./index.js"></script>
+  <portfolio-index></portfolio-index>
+
+  <script type="module" src="./src/portfolio-index.js"></script>
 </body>
 
 </html>

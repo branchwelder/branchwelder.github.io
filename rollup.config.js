@@ -1,6 +1,7 @@
 import nodeResolve from "@rollup/plugin-node-resolve";
 import babel from "@rollup/plugin-babel";
 import html from "@web/rollup-plugin-html";
+import copy from "rollup-plugin-copy";
 import { importMetaAssets } from "@web/rollup-plugin-import-meta-assets";
 import { terser } from "rollup-plugin-terser";
 import { generateSW } from "rollup-plugin-workbox";
@@ -18,6 +19,12 @@ export default {
   preserveEntrySignatures: false,
 
   plugins: [
+    copy({
+      targets: [
+        { src: "assets/fonts", dest: "dist/assets" },
+        { src: "assets/images", dest: "dist/assets" },
+      ],
+    }),
     /** Enable using HTML as rollup entrypoint */
     html({
       minify: true,

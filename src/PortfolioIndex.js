@@ -27,7 +27,7 @@ export class PortfolioIndex extends LitElement {
     return html`
       <main style=${styleMap(theme)}>
       <h1>hannah twigg-smith</h1>
-      <img src="public/images/grid_painting.jpg" class="portrait" width=200></a>
+      <img src="../assets/images/grid_painting.jpg" class="portrait" width=200></a>
         <p class="bio">
           I'm Hannah! I'm a PhD student in Human Centered Design and Engineering at the University of Washington. I work in
           Nadya Peek's lab, Machine Agency. I'm work on tools for personal fabrication and automation, specifically the

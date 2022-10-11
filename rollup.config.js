@@ -13,7 +13,7 @@ export default {
     chunkFileNames: "[hash].js",
     assetFileNames: "[hash][extname]",
     format: "es",
-    dir: "build",
+    dir: "dist",
   },
   preserveEntrySignatures: false,
 
@@ -22,7 +22,7 @@ export default {
     html({
       minify: true,
       injectServiceWorker: true,
-      serviceWorkerPath: "build/sw.js",
+      serviceWorkerPath: "dist/sw.js",
     }),
     /** Resolve bare module imports */
     nodeResolve(),
@@ -70,9 +70,9 @@ export default {
     generateSW({
       navigateFallback: "/index.html",
       // where to output the generated sw
-      swDest: path.join("build", "sw.js"),
+      swDest: path.join("dist", "sw.js"),
       // directory to match patterns against to be precached
-      globDirectory: path.join("build"),
+      globDirectory: path.join("dist"),
       // cache any html js and css by default
       globPatterns: ["**/*.{html,js,css,webmanifest}"],
       skipWaiting: true,

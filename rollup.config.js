@@ -1,14 +1,16 @@
 import nodeResolve from "@rollup/plugin-node-resolve";
 import babel from "@rollup/plugin-babel";
-import html from "@web/rollup-plugin-html";
 import copy from "rollup-plugin-copy";
-import { importMetaAssets } from "@web/rollup-plugin-import-meta-assets";
 import { terser } from "rollup-plugin-terser";
 import { generateSW } from "rollup-plugin-workbox";
+
+import html from "@web/rollup-plugin-html";
+import { importMetaAssets } from "@web/rollup-plugin-import-meta-assets";
+
 import path from "path";
 
 export default {
-  input: "index.html",
+  // input: "index.html",
   output: {
     entryFileNames: "[hash].js",
     chunkFileNames: "[hash].js",
@@ -27,10 +29,13 @@ export default {
     }),
     /** Enable using HTML as rollup entrypoint */
     html({
+      input: "index.html",
       minify: true,
-      injectServiceWorker: true,
-      serviceWorkerPath: "dist/sw.js",
+      // injectServiceWorker: true,
+      // serviceWorkerPath: "dist/sw.js",
     }),
+    html({ input: "pages/cv.html", flattenOutput: false }),
+    html({ input: "posts/*.html", flattenOutput: false }),
     /** Resolve bare module imports */
     nodeResolve(),
     /** Minify JS */
@@ -74,16 +79,16 @@ export default {
       ],
     }),
     /** Create and inject a service worker */
-    generateSW({
-      navigateFallback: "/index.html",
-      // where to output the generated sw
-      swDest: path.join("dist", "sw.js"),
-      // directory to match patterns against to be precached
-      globDirectory: path.join("dist"),
-      // cache any html js and css by default
-      globPatterns: ["**/*.{html,js,css,webmanifest}"],
-      skipWaiting: true,
-      clientsClaim: true,
-    }),
+    // generateSW({
+    //   navigateFallback: "/index.html",
+    //   // where to output the generated sw
+    //   swDest: path.join("dist", "sw.js"),
+    //   // directory to match patterns against to be precached
+    //   globDirectory: path.join("dist"),
+    //   // cache any html js and css by default
+    //   globPatterns: ["**/*.{html,js,css,webmanifest}"],
+    //   skipWaiting: true,
+    //   clientsClaim: true,
+    // }),
   ],
 };

@@ -12,7 +12,9 @@
     "deploy": "npm run build && gh-pages -d dist"
   },
   "dependencies": {
-    "lit": "^2.0.2"
+    "@vaadin/router": "^1.7.4",
+    "lit": "^2.0.2",
+    "showdown": "^2.1.0"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.16.4",

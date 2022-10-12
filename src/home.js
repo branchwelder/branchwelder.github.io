@@ -5,7 +5,7 @@ import { themes } from "./themes";
 import "./Post";
 import "./SocialTag";
 
-export class PortfolioIndex extends LitElement {
+export class Home extends LitElement {
   static properties = {
     theme: {},
   };
@@ -43,6 +43,7 @@ export class PortfolioIndex extends LitElement {
         display: inline-block;
         margin: 1rem 0;
       }
+
       .tag {
         color: var(--base0);
         /* border-radius: 0.2rem; */
@@ -57,7 +58,6 @@ export class PortfolioIndex extends LitElement {
       .green {
         background-color: var(--green);
       }
-
       .pink {
         background-color: var(--pink);
       }
@@ -90,6 +90,13 @@ export class PortfolioIndex extends LitElement {
               I'm Hannah! I'm a PhD student in Human Centered Design and
               Engineering at the University of Washington.
             </p>
+
+            <a href="/blog">Blog</a>
+            <a href="/cv">CV</a>
+            <!-- <a href="pages/cv.html">CHECK OUT MY CV</a>
+            <a href="posts/embryoid.html">embroidery</a>
+            <a href="posts/playdate.html">playdate</a> -->
+
             <div id="tags">
               <social-tag social="twitter"></social-tag>
               <social-tag social="instagram"></social-tag>
@@ -117,3 +124,5 @@ export class PortfolioIndex extends LitElement {
     `;
   }
 }
+
+customElements.define("portfolio-home", Home);

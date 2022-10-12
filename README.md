@@ -1,6 +1,12 @@
 # portfolio
 
+## sections
+
+- upcoming travel/conferences/talks
+- puzzles
+
 ## project backlog
+
 - plasma themes, icons
 - inkscape svg, desktop backgrounds
 - playdate game
@@ -15,7 +21,7 @@
   - css theming
   - external access
 - arrs, autotorrenting
-- 
+
 ## Scripts
 
 - `start` runs your app for development, reloading on file changes

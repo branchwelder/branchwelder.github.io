@@ -2,8 +2,17 @@
 
 ## sections
 
-- upcoming travel/conferences/talks
-- puzzles
+- full papers
+  - plottertwitter
+  - jubilee
+  - design questioning
+- demos/abstracts
+  - dynamic toolchains UIST
+  - dynamic toolchains SCF
+  - Jubilee CHI
+- invited talks
+  - upcoming robotics seminar
+  - CSE colloquium
 
 ## project backlog
 

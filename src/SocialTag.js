@@ -1,16 +1,8 @@
 import { LitElement, html, css } from "lit";
-import { twitter, github, instagram, scholar } from "./icons";
-
-const socials = {
-  twitter: { icon: twitter, color: "blue" },
-  github: { icon: github, color: "purple" },
-  instagram: { icon: instagram, color: "red" },
-  scholar: { icon: scholar, color: "green" },
-};
 
 export class SocialTag extends LitElement {
   static properties = {
-    social: { type: String },
+    social: {},
   };
 
   static get styles() {
@@ -22,33 +14,36 @@ export class SocialTag extends LitElement {
         align-items: center;
         border-radius: 0.5rem;
         font-weight: bold;
+        margin-bottom: 0.2rem;
         cursor: pointer;
       }
-
       #tag:hover {
         background-color: var(--base4) !important;
       }
-
       #text {
         margin-left: 0.3rem;
       }
-
       path {
         fill: var(--base0);
       }
-
       svg {
         height: 1.5rem;
       }
     `;
   }
 
+  constructor() {
+    super();
+    this.social = {};
+  }
+
   render() {
+    console.log(this.social);
     return html`<div
       id="tag"
-      style="background-color: var(--${socials[this.social].color})">
-      ${socials[this.social].icon}
-      <span id="text">${this.social}</span>
+      style="background-color: var(--${this.social.color})">
+      ${this.social.icon}
+      <span id="text">${this.social.service}</span>
     </div>`;
   }
 }

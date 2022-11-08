@@ -35,7 +35,7 @@ class SideBar extends LitElement {
       <div id="nameHeader">hannah twigg-smith</div>
       <img
         id="portrait"
-        src="../assets/images/grid_painting.jpg" />
+        src="../assets/images/hannah_grad.jpg" />
       <p id="bio">${blurbs.bio}</p>
       <div id="socialContainer">
         ${socials.map(

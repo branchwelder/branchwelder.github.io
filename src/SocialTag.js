@@ -38,7 +38,6 @@ export class SocialTag extends LitElement {
   }
 
   render() {
-    console.log(this.social);
     return html`<div
       id="tag"
       style="background-color: var(--${this.social.color})">

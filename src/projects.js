@@ -10,9 +10,7 @@ class Projects extends LitElement {
     }
   `;
   render() {
-    return html` <div
-      id="post-grid"
-      class="section">
+    return html` <div id="post-grid">
       <portfolio-post></portfolio-post>
       <portfolio-post></portfolio-post>
       <portfolio-post></portfolio-post>

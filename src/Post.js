@@ -52,7 +52,7 @@ export class Post extends LitElement {
   render() {
     return html`
       <div id="post-container">
-        <div id="post-title">interesting title</div>
+        <!-- <div id="post-title">interesting title</div> -->
         <!-- <h3>playdate interactive art toy</h3> -->
         <img
           id="teaser"
@@ -63,11 +63,11 @@ export class Post extends LitElement {
           <span class="tag pink">theming</span>
         </div> -->
         <!-- <h3>playdate!</h3> -->
-        <div id="description">
+        <!-- <div id="description">
           Incidunt qui cupiditate rerum qui odit error accusamus. Quia libero a
           aut iste deleniti voluptates non cumque. Et sed et quis totam
           aspernatur.
-        </div>
+        </div> -->
       </div>
     `;
   }

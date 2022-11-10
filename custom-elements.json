@@ -39,6 +39,20 @@
     },
     {
       "kind": "javascript-module",
+      "path": "resources/demos.js",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "module": "resources/demos.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "resources/icons.js",
       "declarations": [
         {
@@ -138,6 +152,12 @@
           }
         }
       ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "resources/teaching.js",
+      "declarations": [],
+      "exports": []
     },
     {
       "kind": "javascript-module",
@@ -419,6 +439,116 @@
           "declaration": {
             "name": "router",
             "module": "src/index.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/notFound.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "NotFound",
+          "members": [
+            {
+              "kind": "field",
+              "name": "location",
+              "privacy": "public",
+              "attribute": "location"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "location",
+              "fieldName": "location"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "portfolio-not-found",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "NotFound",
+          "declaration": {
+            "name": "NotFound",
+            "module": "src/notFound.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "portfolio-not-found",
+          "declaration": {
+            "name": "NotFound",
+            "module": "src/notFound.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/paper.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "Paper",
+          "members": [
+            {
+              "kind": "method",
+              "name": "formatAuthors"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "portfolio-paper",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "portfolio-paper",
+          "declaration": {
+            "name": "Paper",
+            "module": "src/paper.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/projects.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "Projects",
+          "members": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "portfolio-projects",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "portfolio-projects",
+          "declaration": {
+            "name": "Projects",
+            "module": "src/projects.js"
           }
         }
       ]

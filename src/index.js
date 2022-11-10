@@ -1,17 +1,19 @@
 import { Router } from "@vaadin/router";
 import "./home";
 import "./cv";
-import "./blog";
+import "./notFound";
+// import "./blog";
 
 const routes = [
   {
     path: "/",
     component: "portfolio-home",
   },
-  // {
-  //   path: "cv",
-  //   component: "portfolio-cv",
-  // },
+  {
+    path: "/cv",
+    component: "portfolio-cv",
+  },
+  { path: "(.*)", component: "portfolio-not-found" },
   // {
   //   path: "blog",
   //   component: "portfolio-blog",

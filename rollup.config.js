@@ -2,12 +2,12 @@ import nodeResolve from "@rollup/plugin-node-resolve";
 import babel from "@rollup/plugin-babel";
 import copy from "rollup-plugin-copy";
 import { terser } from "rollup-plugin-terser";
+
 import { generateSW } from "rollup-plugin-workbox";
 
 import html from "@web/rollup-plugin-html";
-import { importMetaAssets } from "@web/rollup-plugin-import-meta-assets";
 
-import path from "path";
+import { importMetaAssets } from "@web/rollup-plugin-import-meta-assets";
 
 export default {
   // input: "index.html",
@@ -35,7 +35,7 @@ export default {
       // serviceWorkerPath: "dist/sw.js",
     }),
     html({ input: "pages/cv.html", flattenOutput: false }),
-    html({ input: "posts/*.html", flattenOutput: false }),
+    // html({ input: "posts/*.html", flattenOutput: false }),
     /** Resolve bare module imports */
     nodeResolve(),
     /** Minify JS */

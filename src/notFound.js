@@ -1,7 +1,7 @@
 import { LitElement, html } from "lit";
 import { router } from "./index";
 
-export class CVPage extends LitElement {
+export class NotFound extends LitElement {
   static get properties() {
     return {
       location: Object,
@@ -13,9 +13,8 @@ export class CVPage extends LitElement {
     this.location = router.location;
   }
   render() {
-    return html`Current location URL: ${this.location.getUrl()} THIS IS WHERE
-    THE CV GOES`;
+    return html`UH OH! NOT FOUND!`;
   }
 }
 
-customElements.define("portfolio-cv", CVPage);
+customElements.define("portfolio-not-found", NotFound);

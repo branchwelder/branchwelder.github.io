@@ -1,13 +1,13 @@
-import { router } from "./router";
+import { router } from "../router";
 import { LitElement, html, css } from "lit";
 import { styleMap } from "lit/directives/style-map.js";
-import { themes } from "./assets/themes";
+import { themes } from "../assets/themes";
 
-import "./social";
-import socials from "../content/socials";
+import "../common/social-icon";
+import socials from "../../content/socials";
 
-import "./project";
-import projects from "../content/projects";
+import "../common/project-tile";
+import projects from "../../content/projects";
 
 const colors = [
   "pink",
@@ -28,9 +28,9 @@ export class Home extends LitElement {
 
   static get styles() {
     return css`
-      main {
-        min-height: 100vh;
-        overflow: auto;
+      #main {
+        height: 100%;
+        position: absolute;
         background-color: var(--base0, black);
         color: var(--base6, white);
       }
@@ -49,14 +49,14 @@ export class Home extends LitElement {
         flex: 1;
         padding: 1rem;
       }
-      #content {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
-        gap: 1rem;
+      #site {
+        position: relative;
+        background-color: var(--base0);
         z-index: 0;
       }
       #socials {
         display: flex;
+        margin-top: 1rem;
       }
       /* Mobile mode */
       @media only screen and (max-width: 767px) {
@@ -67,7 +67,6 @@ export class Home extends LitElement {
           flex-direction: column;
           -webkit-box-align: center;
           align-items: center;
-          min-height: 100%;
         }
         #nav {
           text-align: center;
@@ -80,7 +79,8 @@ export class Home extends LitElement {
         #footer {
           text-align: center;
         }
-        #socials {
+        #socials,
+        #links {
           justify-content: center;
         }
       }
@@ -92,23 +92,40 @@ export class Home extends LitElement {
           -webkit-box-direction: normal;
           -webkit-box-orient: horizontal;
           flex-direction: row;
-          min-height: 100%;
           overflow: auto;
+          height: 100%;
         }
         #nav {
           text-align: right;
-          position: -webkit-sticky; /* for Safari */
-          position: sticky;
-          top: 0;
-          align-self: flex-start; /* <-- this is the fix */
         }
         #content {
           max-width: 60%;
-          padding: 15px;
+          padding: 1rem;
         }
-        #socials {
+        #socials,
+        #links {
           justify-content: end;
         }
+      }
+
+      #links {
+        display: flex;
+      }
+
+      .link {
+        color: var(--base6);
+        outline: 1px solid var(--base6);
+        padding: 0.2rem;
+        cursor: var(--cursor-pointer), pointer;
+      }
+
+      .link:hover {
+        background-color: var(--green);
+        color: var(--base0);
+      }
+
+      a {
+        text-decoration: none;
       }
     `;
   }
@@ -121,39 +138,41 @@ export class Home extends LitElement {
 
   render() {
     return html`
-      <main style=${styleMap(themes[this.theme])}>
+      <div id="main" style=${styleMap(themes[this.theme])}>
         <div id="site">
           <div id="nav">
             <div id="nameHeader">hannah twigg-smith</div>
-            <div>
-              <a href="/content/twigg-smith_cv.pdf" router-ignore>PDF CV</a>
+            <div id="links">
+              <a href="/cv"><span class="link">CV</span></a>
+              <a href="/about"><span class="link">about</span></a>
             </div>
             <div id="socials">
               ${socials.map(
-                (social) =>
-                  html`<portfolio-social .social=${social}></portfolio-social>`
+                (social) => html`<social-icon .social=${social}></social-icon>`
               )}
             </div>
           </div>
           <div id="content">
-            ${projects.map(
-              (project) =>
-                html`<portfolio-project
-                  .project=${project}
-                  style="--hovercolor: var(--${colors[
-                    Math.floor(Math.random() * colors.length)
-                  ]})"
-                ></portfolio-project>`
-            )}
+            <slot></slot>
           </div>
           <div id="footer"></div>
         </div>
-      </main>
+      </div>
     `;
   }
 }
 
 customElements.define("portfolio-home", Home);
+
+// ${projects.map(
+//   (project) =>
+//     html`<project-tile
+//       .project=${project}
+//       style="--hovercolor: var(--${colors[
+//         Math.floor(Math.random() * colors.length)
+//       ]})"
+//     ></project-tile>`
+// )}
 
 // import { marked } from "marked";
 // fetch("../posts/squares.md")

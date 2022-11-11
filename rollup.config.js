@@ -8,7 +8,6 @@ import { generateSW } from "rollup-plugin-workbox";
 var path = require("path");
 
 export default {
-  // input: "index.html",
   output: {
     entryFileNames: "[hash].js",
     chunkFileNames: "[hash].js",
@@ -34,9 +33,6 @@ export default {
       injectServiceWorker: true,
       serviceWorkerPath: "dist/sw.js",
     }),
-
-    // html({ input: "pages/cv.html", flattenOutput: false }),
-    // html({ input: "posts/*.html", flattenOutput: false }),
 
     /** Resolve bare module imports */
     nodeResolve(),

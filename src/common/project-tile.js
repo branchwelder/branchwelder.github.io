@@ -1,6 +1,6 @@
 import { LitElement, html, css } from "lit";
 
-export class Project extends LitElement {
+export class ProjectTile extends LitElement {
   static properties = {
     project: {},
   };
@@ -50,7 +50,7 @@ export class Project extends LitElement {
     `;
   }
 }
-customElements.define("portfolio-project", Project);
+customElements.define("project-tile", ProjectTile);
 
 // <!-- <div id="post-title">interesting title</div> -->
 // <!-- <h3>playdate interactive art toy</h3> -->

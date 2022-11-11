@@ -32,167 +32,6 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/home.js",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "Home",
-          "members": [
-            {
-              "kind": "field",
-              "name": "theme",
-              "type": {
-                "text": "string"
-              },
-              "default": "\"nord\"",
-              "privacy": "public",
-              "attribute": "theme"
-            },
-            {
-              "kind": "field",
-              "name": "location",
-              "privacy": "public",
-              "attribute": "location"
-            }
-          ],
-          "attributes": [
-            {
-              "name": "theme",
-              "fieldName": "theme"
-            },
-            {
-              "name": "location",
-              "fieldName": "location"
-            }
-          ],
-          "superclass": {
-            "name": "LitElement",
-            "package": "lit"
-          },
-          "tagName": "portfolio-home",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "Home",
-          "declaration": {
-            "name": "Home",
-            "module": "src/home.js"
-          }
-        },
-        {
-          "kind": "custom-element-definition",
-          "name": "portfolio-home",
-          "declaration": {
-            "name": "Home",
-            "module": "src/home.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "src/ohno.js",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "OhNo",
-          "members": [
-            {
-              "kind": "field",
-              "name": "location",
-              "privacy": "public",
-              "attribute": "location"
-            }
-          ],
-          "attributes": [
-            {
-              "name": "location",
-              "fieldName": "location"
-            }
-          ],
-          "superclass": {
-            "name": "LitElement",
-            "package": "lit"
-          },
-          "tagName": "oh-no",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "OhNo",
-          "declaration": {
-            "name": "OhNo",
-            "module": "src/ohno.js"
-          }
-        },
-        {
-          "kind": "custom-element-definition",
-          "name": "oh-no",
-          "declaration": {
-            "name": "OhNo",
-            "module": "src/ohno.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "src/project.js",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "Project",
-          "members": [
-            {
-              "kind": "field",
-              "name": "project",
-              "privacy": "public",
-              "attribute": "project"
-            }
-          ],
-          "attributes": [
-            {
-              "name": "project",
-              "fieldName": "project"
-            }
-          ],
-          "superclass": {
-            "name": "LitElement",
-            "package": "lit"
-          },
-          "tagName": "portfolio-project",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "Project",
-          "declaration": {
-            "name": "Project",
-            "module": "src/project.js"
-          }
-        },
-        {
-          "kind": "custom-element-definition",
-          "name": "portfolio-project",
-          "declaration": {
-            "name": "Project",
-            "module": "src/project.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
       "path": "src/router.js",
       "declarations": [
         {
@@ -214,56 +53,70 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/social.js",
+      "path": "content/cv/demos.js",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "module": "content/cv/demos.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "content/cv/paper.js",
       "declarations": [
         {
           "kind": "class",
           "description": "",
-          "name": "Social",
+          "name": "Paper",
           "members": [
             {
-              "kind": "field",
-              "name": "social",
-              "type": {
-                "text": "object"
-              },
-              "default": "{}",
-              "privacy": "public",
-              "attribute": "social"
-            }
-          ],
-          "attributes": [
-            {
-              "name": "social",
-              "fieldName": "social"
+              "kind": "method",
+              "name": "formatAuthors"
             }
           ],
           "superclass": {
             "name": "LitElement",
             "package": "lit"
           },
-          "tagName": "portfolio-social",
+          "tagName": "portfolio-paper",
           "customElement": true
         }
       ],
       "exports": [
         {
-          "kind": "js",
-          "name": "Social",
-          "declaration": {
-            "name": "Social",
-            "module": "src/social.js"
-          }
-        },
-        {
           "kind": "custom-element-definition",
-          "name": "portfolio-social",
+          "name": "portfolio-paper",
           "declaration": {
-            "name": "Social",
-            "module": "src/social.js"
+            "name": "Paper",
+            "module": "content/cv/paper.js"
           }
         }
       ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "content/cv/papers.js",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "module": "content/cv/papers.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "content/cv/teaching.js",
+      "declarations": [],
+      "exports": []
     },
     {
       "kind": "javascript-module",
@@ -364,12 +217,114 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/cv/cv.js",
+      "path": "src/common/project-tile.js",
       "declarations": [
         {
           "kind": "class",
           "description": "",
-          "name": "CVPage",
+          "name": "ProjectTile",
+          "members": [
+            {
+              "kind": "field",
+              "name": "project",
+              "privacy": "public",
+              "attribute": "project"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "project",
+              "fieldName": "project"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "project-tile",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "ProjectTile",
+          "declaration": {
+            "name": "ProjectTile",
+            "module": "src/common/project-tile.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "project-tile",
+          "declaration": {
+            "name": "ProjectTile",
+            "module": "src/common/project-tile.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/common/social-icon.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "SocialIcon",
+          "members": [
+            {
+              "kind": "field",
+              "name": "social",
+              "type": {
+                "text": "object"
+              },
+              "default": "{}",
+              "privacy": "public",
+              "attribute": "social"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "social",
+              "fieldName": "social"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "social-icon",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "SocialIcon",
+          "declaration": {
+            "name": "SocialIcon",
+            "module": "src/common/social-icon.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "social-icon",
+          "declaration": {
+            "name": "SocialIcon",
+            "module": "src/common/social-icon.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/pages/about.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "About",
           "members": [
             {
               "kind": "field",
@@ -388,95 +343,238 @@
             "name": "LitElement",
             "package": "lit"
           },
-          "tagName": "portfolio-cv",
+          "tagName": "twigg-about",
           "customElement": true
         }
       ],
       "exports": [
         {
           "kind": "js",
-          "name": "CVPage",
+          "name": "About",
           "declaration": {
-            "name": "CVPage",
-            "module": "src/cv/cv.js"
+            "name": "About",
+            "module": "src/pages/about.js"
           }
         },
         {
           "kind": "custom-element-definition",
-          "name": "portfolio-cv",
+          "name": "twigg-about",
           "declaration": {
-            "name": "CVPage",
-            "module": "src/cv/cv.js"
+            "name": "About",
+            "module": "src/pages/about.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "src/cv/demos.js",
-      "declarations": [],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "module": "src/cv/demos.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "src/cv/paper.js",
+      "path": "src/pages/cv.js",
       "declarations": [
         {
           "kind": "class",
           "description": "",
-          "name": "Paper",
+          "name": "CV",
           "members": [
             {
-              "kind": "method",
-              "name": "formatAuthors"
+              "kind": "field",
+              "name": "location",
+              "privacy": "public",
+              "attribute": "location"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "location",
+              "fieldName": "location"
             }
           ],
           "superclass": {
             "name": "LitElement",
             "package": "lit"
           },
-          "tagName": "portfolio-paper",
+          "tagName": "twigg-cv",
           "customElement": true
         }
       ],
       "exports": [
         {
-          "kind": "custom-element-definition",
-          "name": "portfolio-paper",
+          "kind": "js",
+          "name": "CV",
           "declaration": {
-            "name": "Paper",
-            "module": "src/cv/paper.js"
+            "name": "CV",
+            "module": "src/pages/cv.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "twigg-cv",
+          "declaration": {
+            "name": "CV",
+            "module": "src/pages/cv.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "src/cv/papers.js",
-      "declarations": [],
+      "path": "src/pages/home.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "Home",
+          "members": [
+            {
+              "kind": "field",
+              "name": "theme",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"nord\"",
+              "privacy": "public",
+              "attribute": "theme"
+            },
+            {
+              "kind": "field",
+              "name": "location",
+              "privacy": "public",
+              "attribute": "location"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "theme",
+              "fieldName": "theme"
+            },
+            {
+              "name": "location",
+              "fieldName": "location"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "portfolio-home",
+          "customElement": true
+        }
+      ],
       "exports": [
         {
           "kind": "js",
-          "name": "default",
+          "name": "Home",
           "declaration": {
-            "module": "src/cv/papers.js"
+            "name": "Home",
+            "module": "src/pages/home.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "portfolio-home",
+          "declaration": {
+            "name": "Home",
+            "module": "src/pages/home.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "src/cv/teaching.js",
-      "declarations": [],
-      "exports": []
+      "path": "src/pages/ohno.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "OhNo",
+          "members": [
+            {
+              "kind": "field",
+              "name": "location",
+              "privacy": "public",
+              "attribute": "location"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "location",
+              "fieldName": "location"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "oh-no",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "OhNo",
+          "declaration": {
+            "name": "OhNo",
+            "module": "src/pages/ohno.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "oh-no",
+          "declaration": {
+            "name": "OhNo",
+            "module": "src/pages/ohno.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/pages/projects.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "ProjectGrid",
+          "members": [
+            {
+              "kind": "field",
+              "name": "location",
+              "privacy": "public",
+              "attribute": "location"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "location",
+              "fieldName": "location"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "project-grid",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "ProjectGrid",
+          "declaration": {
+            "name": "ProjectGrid",
+            "module": "src/pages/projects.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "project-grid",
+          "declaration": {
+            "name": "ProjectGrid",
+            "module": "src/pages/projects.js"
+          }
+        }
+      ]
     }
   ]
 }

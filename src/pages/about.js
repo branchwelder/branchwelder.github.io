@@ -1,7 +1,7 @@
 import { LitElement, html, css } from "lit";
-import { router } from "./router";
+import { router } from "../router";
 
-export class OhNo extends LitElement {
+export class About extends LitElement {
   static get properties() {
     return {
       location: Object,
@@ -21,8 +21,8 @@ export class OhNo extends LitElement {
     this.location = router.location;
   }
   render() {
-    return html`UH OH! NOT FOUND!`;
+    return html`aboot!`;
   }
 }
 
-customElements.define("oh-no", OhNo);
+customElements.define("twigg-about", About);

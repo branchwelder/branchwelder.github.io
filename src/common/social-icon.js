@@ -1,6 +1,6 @@
 import { LitElement, html, css } from "lit";
 
-export class Social extends LitElement {
+export class SocialIcon extends LitElement {
   static properties = {
     social: {},
   };
@@ -50,4 +50,4 @@ export class Social extends LitElement {
   }
 }
 
-customElements.define("portfolio-social", Social);
+customElements.define("social-icon", SocialIcon);

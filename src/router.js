@@ -1,48 +1,31 @@
 import { Router } from "@vaadin/router";
 
-import "./home";
-import "./ohno";
+// Import home and error pages by default
+import "./pages/home";
+import "./pages/projects";
+import "./pages/ohno";
 
 const routes = [
   {
     path: "/",
     component: "portfolio-home",
+    children: [{ path: "/", component: "project-grid" }],
   },
   {
     path: "/cv",
-    component: "portfolio-cv",
+    component: "twigg-cv",
     action: async () => {
-      await import("./cv/cv");
+      await import("./pages/cv");
+    },
+  },
+  {
+    path: "/about",
+    component: "twigg-about",
+    action: async () => {
+      await import("./pages/about");
     },
   },
   { path: "(.*)", component: "oh-no" },
-  // {
-  //   path: "blog",
-  //   component: "portfolio-blog",
-  //   action: async () => {
-  //     await import("./blog");
-  //   },
-  //   children: [
-  //     {
-  //       path: "",
-  //       redirect: "/blog/posts",
-  //     },
-  //     {
-  //       path: "posts",
-  //       component: "all-posts",
-  //       action: async () => {
-  //         await import("./allposts");
-  //       },
-  //     },
-  //     {
-  //       path: "posts/:id",
-  //       component: "blog-post",
-  //       action: async () => {
-  //         await import("./blogpost");
-  //       },
-  //     },
-  //   ],
-  // },
 ];
 
 const outlet = document.getElementById("outlet");

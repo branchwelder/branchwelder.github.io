@@ -10,12 +10,10 @@ import { styleMap } from "lit/directives/style-map.js";
 
 import { themes } from "./themes";
 
-import "./sidebar";
-import "./paper";
+import "./cv/paper";
 import "./project";
+import "./social";
 
-import papers from "../resources/papers";
-import demos from "../resources/demos";
 import socials from "../resources/socials";
 import projects from "../resources/projects";
 
@@ -32,6 +30,29 @@ export class Home extends LitElement {
         background-color: var(--base0, black);
         color: var(--base6, white);
       }
+      #nameHeader {
+        color: var(--base6);
+        font-size: 2rem;
+        font-weight: 999;
+        font-style: italic;
+      }
+      #nav {
+        flex: 1;
+        padding: 1rem;
+      }
+      #footer {
+        flex: 1;
+      }
+      #content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+        gap: 1rem;
+        z-index: 0;
+      }
+      #socials {
+        display: flex;
+      }
+      /* Mobile mode */
       @media only screen and (max-width: 767px) {
         #site {
           display: flex;
@@ -57,6 +78,7 @@ export class Home extends LitElement {
           justify-content: center;
         }
       }
+      /* Desktop mode */
       @media only screen and (min-width: 767px) {
         #site {
           display: flex;
@@ -78,28 +100,6 @@ export class Home extends LitElement {
           bottom: 0;
         }
       }
-      #nameHeader {
-        color: var(--base4);
-        font-size: 2rem;
-        font-weight: 999;
-        font-style: italic;
-      }
-      #nav {
-        flex: 1;
-        padding: 1rem;
-      }
-      #footer {
-        flex: 1;
-      }
-      #content {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
-        gap: 1rem;
-        z-index: 0;
-      }
-      #socials {
-        display: flex;
-      }
     `;
   }
 
@@ -116,13 +116,10 @@ export class Home extends LitElement {
         <div id="site">
           <div id="nav">
             <div id="nameHeader">hannah twigg-smith</div>
-            <div id="links">
-              <a href="/cv">CV</a>
-              <!-- <a href="/error">error</a> -->
-            </div>
             <div id="socials">
               ${socials.map(
-                (social) => html`<social-tag .social=${social}></social-tag>`
+                (social) =>
+                  html`<portfolio-social .social=${social}></portfolio-social>`
               )}
             </div>
           </div>
@@ -130,7 +127,8 @@ export class Home extends LitElement {
             ${projects.map(
               (project) =>
                 html`<portfolio-project
-                  .project=${project}></portfolio-project>`
+                  .project=${project}
+                ></portfolio-project>`
             )}
           </div>
           <div id="footer">

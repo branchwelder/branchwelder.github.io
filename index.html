@@ -18,11 +18,19 @@
     font-weight: 1 999;
   }
 
+  :root {
+    --cursor-default: url("./assets/cursor/cursor.cur");
+    --cursor-pointer: url("./assets/cursor/pointer.cur");
+    --cursor-move: url("./assets/cursor/move.cur");
+    --cursor-beam: url("./assets/cursor/beam.cur");
+  }
+
   html,
   body {
     margin: 0;
     padding: 0;
     font-family: Inter;
+    cursor: var(--cursor-default), auto;
   }
 
   *,
@@ -34,7 +42,7 @@
 
 <body>
   <div id="outlet"></div>
-  <script type="module" src="./src/index.js"></script>
+  <script type="module" src="./src/router.js"></script>
 </body>
 
 </html>

@@ -21,7 +21,7 @@ export class Project extends LitElement {
         content: "";
         position: absolute;
         z-index: -1;
-        inset: 0;
+        inset: 1px;
         transform: translate(0, 0);
         background-color: var(--blue);
       }
@@ -31,6 +31,7 @@ export class Project extends LitElement {
       }
       #root:hover {
         transform: translate(calc(2rem * 0.125), calc(2rem * -0.125));
+        cursor: var(--cursor-pointer), pointer;
       }
       #root,
       :host::before {
@@ -50,7 +51,8 @@ export class Project extends LitElement {
         <img
           id="teaser"
           src="../assets/images/grid_painting.jpg"
-          src=${`..${this.project.url}/teaser.jpg`} />
+          src=${`..${this.project.url}/teaser.jpg`}
+        />
       </div>
     `;
   }

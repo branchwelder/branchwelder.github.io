@@ -39,3 +39,7 @@
 - `test` runs your test suite with Web Test Runner
 - `lint` runs the linter for your project
 - `format` fixes linting and formatting errors
+
+## Acknowledgements
+
+The cursor is [Posy's](http://www.michieldb.nl/other/cursors/). Buy his [music](https://posy.bandcamp.com/)!

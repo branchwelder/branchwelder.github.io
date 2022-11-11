@@ -1,5 +1,5 @@
 export const themes = {
-  "solarized-dark": {
+  solarized: {
     "--base0": "#002b36",
     "--base1": "#073642",
     "--base2": "#586e75",

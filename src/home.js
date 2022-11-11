@@ -1,15 +1,23 @@
 import { LitElement, html, css } from "lit";
 import { styleMap } from "lit/directives/style-map.js";
-import { marked } from "marked";
+// import { marked } from "marked";
+// fetch("../posts/squares.md")
+//   .then((response) => response.blob())
+//   .then((blob) => blob.text())
+//   .then((markdown) => {
+//     console.log(marked.parse(markdown));
+//   });
 
 import { themes } from "./themes";
 
 import "./sidebar";
 import "./paper";
-import "./Post";
+import "./project";
 
 import papers from "../resources/papers";
 import demos from "../resources/demos";
+import socials from "../resources/socials";
+import projects from "../resources/projects";
 
 export class Home extends LitElement {
   static properties = {
@@ -45,6 +53,9 @@ export class Home extends LitElement {
         #footer {
           text-align: center;
         }
+        #socials {
+          justify-content: center;
+        }
       }
       @media only screen and (min-width: 767px) {
         #site {
@@ -62,70 +73,32 @@ export class Home extends LitElement {
           max-width: 60%;
           padding: 15px;
         }
-        #footer {
-          align-self: flex-end;
+        #socials {
+          justify-content: end;
+          bottom: 0;
         }
       }
       #nameHeader {
-        background-color: var(--purple);
-        color: var(--base0);
+        color: var(--base4);
         font-size: 2rem;
         font-weight: 999;
         font-style: italic;
-        padding: 0.3rem 1rem;
-        display: inline-block;
-        margin: 1rem 0;
-      }
-      .section-title {
-        /* background-color: var(--purple); */
-        color: var(--base0);
-        font-size: 1.5rem;
-        font-weight: 999;
-        font-style: italic;
-        padding: 0.3rem 1rem;
-        /* margin: 1rem 0; */
       }
       #nav {
-        /* margin: 0;
-        padding: 0;
-        width: 15rem;
-        background-color: var(--base2);
-        position: fixed;
-        height: 100%;
-        overflow: auto; */
-        /* background-color: var(--base3); */
         flex: 1;
+        padding: 1rem;
       }
       #footer {
         flex: 1;
       }
       #content {
-        /* margin-left: 15rem; */
-        /* background-color: var(--base1); */
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
         gap: 1rem;
+        z-index: 0;
       }
-      .section {
-        padding: 0 1rem;
-      }
-      .cyan {
-        background-color: var(--cyan);
-      }
-      .purple {
-        background-color: var(--purple);
-      }
-      .green {
-        background-color: var(--green);
-      }
-      .pink {
-        background-color: var(--pink);
-      }
-      .red {
-        background-color: var(--red);
-      }
-      .blue {
-        background-color: var(--blue);
+      #socials {
+        display: flex;
       }
     `;
   }
@@ -137,33 +110,31 @@ export class Home extends LitElement {
 
   render() {
     const theme = themes[this.theme];
-    // fetch("../posts/squares.md")
-    //   .then((response) => response.blob())
-    //   .then((blob) => blob.text())
-    //   .then((markdown) => {
-    //     console.log(marked.parse(markdown));
-    //   });
+
     return html`
       <main style=${styleMap(theme)}>
         <div id="site">
           <div id="nav">
             <div id="nameHeader">hannah twigg-smith</div>
-            <a href="/cv">CV</a>
-            <a href="/error">error</a>
+            <div id="links">
+              <a href="/cv">CV</a>
+              <!-- <a href="/error">error</a> -->
+            </div>
+            <div id="socials">
+              ${socials.map(
+                (social) => html`<social-tag .social=${social}></social-tag>`
+              )}
+            </div>
           </div>
           <div id="content">
-            <portfolio-post></portfolio-post>
-            <portfolio-post></portfolio-post>
-            <portfolio-post></portfolio-post>
-            <portfolio-post></portfolio-post>
-            <portfolio-post></portfolio-post>
-            <portfolio-post></portfolio-post>
-            <portfolio-post></portfolio-post>
-            <portfolio-post></portfolio-post>
-            <portfolio-post></portfolio-post>
+            ${projects.map(
+              (project) =>
+                html`<portfolio-project
+                  .project=${project}></portfolio-project>`
+            )}
           </div>
           <div id="footer">
-            <span>made by branchwelder</span>
+            <!-- <span>made by branchwelder</span> -->
           </div>
         </div>
       </main>
@@ -197,3 +168,39 @@ customElements.define("portfolio-home", Home);
 //         html`<portfolio-paper .paper=${demo}></portfolio-paper>`
 //     )}
 //   </div>
+
+// .cyan {
+//   background-color: var(--cyan);
+// }
+// .purple {
+//   background-color: var(--purple);
+// }
+// .green {
+//   background-color: var(--green);
+// }
+// .pink {
+//   background-color: var(--pink);
+// }
+// .red {
+//   background-color: var(--red);
+// }
+// .blue {
+//   background-color: var(--blue);
+// }
+
+/* margin: 0;
+        padding: 0;
+        width: 15rem;
+        background-color: var(--base2);
+        position: fixed;
+        height: 100%;
+        overflow: auto; */
+/* background-color: var(--base3); */
+
+// .section-title {
+//   color: var(--base0);
+//   font-size: 1.5rem;
+//   font-weight: 999;
+//   font-style: italic;
+//   padding: 0.3rem 1rem;
+// }

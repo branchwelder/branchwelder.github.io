@@ -1,6 +1,7 @@
 import { Router } from "@vaadin/router";
 import "./home";
-import "./cv";
+
+// import "./cv";
 import "./notFound";
 // import "./blog";
 
@@ -12,6 +13,9 @@ const routes = [
   {
     path: "/cv",
     component: "portfolio-cv",
+    action: async () => {
+      await import("./cv");
+    },
   },
   { path: "(.*)", component: "portfolio-not-found" },
   // {

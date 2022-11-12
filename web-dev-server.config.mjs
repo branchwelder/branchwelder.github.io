@@ -1,3 +1,8 @@
+import { fromRollup } from "@web/dev-server-rollup";
+import rollupCommonjs from "@rollup/plugin-commonjs";
+
+const commonjs = fromRollup(rollupCommonjs);
+
 export default {
   open: "/",
   watch: true,
@@ -9,4 +14,7 @@ export default {
   nodeResolve: {
     exportConditions: ["browser", "development"],
   },
+
+  /** List the commonjs packages that need to be transformed */
+  // plugins: [commonjs()],
 };

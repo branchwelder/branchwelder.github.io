@@ -1,4 +1,11 @@
-import { twitter, github, instagram, scholar, mail } from "../src/assets/icons";
+import {
+  twitter,
+  github,
+  instagram,
+  scholar,
+  mail,
+  linkedin,
+} from "../src/assets/icons";
 
 export default [
   {
@@ -30,5 +37,11 @@ export default [
     url: "mailto:htwiggsmith@gmail.com?subject=i read your website",
     icon: mail,
     color: "yellow",
+  },
+  {
+    service: "linkedin",
+    url: "https://www.linkedin.com/in/branchwelder/",
+    icon: linkedin,
+    color: "cyan",
   },
 ];

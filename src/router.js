@@ -18,6 +18,13 @@ const routes = [
           await import("./pages/about");
         },
       },
+      {
+        path: "/projects/:post",
+        component: "twigg-post",
+        action: async () => {
+          await import("./pages/post");
+        },
+      },
     ],
   },
   {

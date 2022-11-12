@@ -1,63 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
-    />
-    <meta name="Description" content="hannah's portfolio." />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="./public/favicon/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="./public/favicon/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="./public/favicon/favicon-16x16.png"
-    />
-    <base href="/" />
-    <title>twigg</title>
-  </head>
-  <style>
-    @font-face {
-      font-family: "Inter";
-      src: url("./public/fonts/Inter-Variable.ttf");
-      font-weight: 1 999;
-    }
 
-    :root {
-      --cursor-default: url("./public/cursor/cursor.cur");
-      --cursor-pointer: url("./public/cursor/pointer.cur");
-      --cursor-move: url("./public/cursor/move.cur");
-      --cursor-beam: url("./public/cursor/beam.cur");
-    }
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="Description" content="hannah's portfolio." />
+  <link rel="apple-touch-icon" sizes="180x180" href="./public/favicon/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./public/favicon/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="./public/favicon/favicon-16x16.png" />
+  <base href="/" />
+  <title>twigg</title>
+</head>
+<style>
+  @font-face {
+    font-family: "Inter";
+    src: url("./public/fonts/Inter-Variable.ttf");
+    font-weight: 1 999;
+  }
 
-    html,
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: Inter;
-      cursor: var(--cursor-default), auto;
-    }
+  :root {
+    --cursor-default: url("./public/cursor/cursor.cur");
+    --cursor-pointer: url("./public/cursor/pointer.cur");
+    --cursor-move: url("./public/cursor/move.cur");
+    --cursor-beam: url("./public/cursor/beam.cur");
+    /* Default colors are nord theme */
+    --black: #2e3440;
+    --white: #eceff4;
+    --pink: #e892b2;
+    --red: #bf616a;
+    --orange: #d08770;
+    --yellow: #ebcb8b;
+    --green: #a3be8c;
+    --cyan: #88c0d0;
+    --blue: #5e81ac;
+    --purple: #b48ead;
+  }
 
-    *,
-    *::before,
-    *::after {
-      box-sizing: border-box;
-    }
-  </style>
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Inter;
+    cursor: var(--cursor-default), auto;
+    background: var(--black);
+  }
 
-  <body>
-    <div id="outlet"></div>
-    <script type="module" src="./src/router.js"></script>
-  </body>
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+</style>
+
+<body>
+  <div id="outlet"></div>
+  <script type="module" src="./src/router.js"></script>
+</body>
+
 </html>

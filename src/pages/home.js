@@ -25,7 +25,6 @@ export class Home extends LitElement {
       #nav {
         padding: 1rem;
         width: fit-content;
-        height: fit-content;
         position: sticky;
         top: 0;
         display: flex;
@@ -96,6 +95,10 @@ export class Home extends LitElement {
           gap: 1rem;
           text-align: right;
           flex-direction: column;
+          height: 100vh;
+          -webkit-box-sizing: border-box;
+          -moz-box-sizing: border-box;
+          box-sizing: border-box;
         }
         #socials,
         #links {
@@ -113,7 +116,9 @@ export class Home extends LitElement {
 
   render() {
     return html`
-      <div id="main" style=${styleMap(themes[this.theme])}>
+      <div
+        id="main"
+        style=${styleMap(themes[this.theme])}>
         <div id="nav">
           <a href="/"
             ><div id="nameHeader">hannah<br />twigg&#8209;smith</div>

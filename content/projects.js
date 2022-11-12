@@ -1,23 +1,23 @@
 export default [
   {
-    url: "/content/watercolor",
+    url: "/content/projects/watercolor",
   },
   {
-    url: "/content/embryoid",
+    url: "/content/projects/embryoid",
   },
   {
-    url: "/content/playdate",
+    url: "/content/projects/playdate",
   },
   {
-    url: "/content/cnc_automata",
+    url: "/content/projects/cnc_automata",
   },
   {
-    url: "/content/scarves",
+    url: "/content/projects/scarves",
   },
   {
-    url: "/content/slice-it",
+    url: "/content/projects/slice-it",
   },
   {
-    url: "/content/cacao",
+    url: "/content/projects/cacao",
   },
 ];

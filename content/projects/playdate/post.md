@@ -6,4 +6,4 @@ date: "2022-09-05"
 
 # Squares
 
-hello world
+I made a little square game for the playdate!

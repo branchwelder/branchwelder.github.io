@@ -1,27 +1,39 @@
-# portfolio
+# twiggsite
 
-## sections
+## Folder structure
 
-- full papers
-  - plottertwitter
-  - jubilee
-  - design questioning
-- demos/abstracts
-  - dynamic toolchains UIST
-  - dynamic toolchains SCF
-  - Jubilee CHI
-- invited talks
-  - upcoming robotics seminar
-  - CSE colloquium
+- index.html
+- rollup.config.js
+- package.json
+- **content/** - project pages, blog posts
+- **public/** - contents copied as-is to `dist` on build.
+- **src/** - actual JS for the site
+  - **assets/**
+
+## Scripts
+
+- `start` runs the site for development, reloading on file changes
+- `start:build` runs the site after it has been built using the build command
+- `build` builds the site and outputs it in the `dist` directory
+- `deploy` deploys the site to gh-pages
+
+## Tools
+
+- [Rollup](https://rollupjs.org/) for building
+- [Web Dev Server](https://modern-web.dev/docs/dev-server/overview/) for local
+  development server
+- [Lit](https://lit.dev/) for webcomponents
 
 ## project backlog
 
 - plasma themes, icons
+- color themes
 - inkscape svg, desktop backgrounds
 - playdate game
 - embroideries
 - knits
 - kaonashi
+- puzzles
 - plottertwitter
 - jubilee
 - sliceit
@@ -31,15 +43,7 @@
   - external access
 - arrs, autotorrenting
 
-## Scripts
-
-- `start` runs your app for development, reloading on file changes
-- `start:build` runs your app after it has been built using the build command
-- `build` builds your app and outputs it in your `dist` directory
-- `test` runs your test suite with Web Test Runner
-- `lint` runs the linter for your project
-- `format` fixes linting and formatting errors
-
 ## Acknowledgements
 
-The cursor is [Posy's](http://www.michieldb.nl/other/cursors/). Buy his [music](https://posy.bandcamp.com/)!
+The cursor is [Posy's](http://www.michieldb.nl/other/cursors/). Buy his
+[music](https://posy.bandcamp.com/)!

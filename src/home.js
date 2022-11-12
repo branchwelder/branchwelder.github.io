@@ -1,21 +1,13 @@
+import { router } from "./router";
 import { LitElement, html, css } from "lit";
 import { styleMap } from "lit/directives/style-map.js";
-// import { marked } from "marked";
-// fetch("../posts/squares.md")
-//   .then((response) => response.blob())
-//   .then((blob) => blob.text())
-//   .then((markdown) => {
-//     console.log(marked.parse(markdown));
-//   });
+import { themes } from "./assets/themes";
 
-import { themes } from "./themes";
-
-import "./cv/paper";
-import "./project";
 import "./social";
+import socials from "../content/socials";
 
-import socials from "../resources/socials";
-import projects from "../resources/projects";
+import "./project";
+import projects from "../content/projects";
 
 const colors = [
   "pink",
@@ -31,6 +23,7 @@ const colors = [
 export class Home extends LitElement {
   static properties = {
     theme: {},
+    location: {},
   };
 
   static get styles() {
@@ -122,16 +115,19 @@ export class Home extends LitElement {
 
   constructor() {
     super();
-    this.theme = "dracula";
+    this.theme = "nord";
+    this.location = router.location;
   }
 
   render() {
-    const theme = themes[this.theme];
     return html`
-      <main style=${styleMap(theme)}>
+      <main style=${styleMap(themes[this.theme])}>
         <div id="site">
           <div id="nav">
             <div id="nameHeader">hannah twigg-smith</div>
+            <div>
+              <a href="/content/twigg-smith_cv.pdf" router-ignore>PDF CV</a>
+            </div>
             <div id="socials">
               ${socials.map(
                 (social) =>
@@ -150,9 +146,7 @@ export class Home extends LitElement {
                 ></portfolio-project>`
             )}
           </div>
-          <div id="footer">
-            <!-- <span>made by branchwelder</span> -->
-          </div>
+          <div id="footer"></div>
         </div>
       </main>
     `;
@@ -160,6 +154,14 @@ export class Home extends LitElement {
 }
 
 customElements.define("portfolio-home", Home);
+
+// import { marked } from "marked";
+// fetch("../posts/squares.md")
+//   .then((response) => response.blob())
+//   .then((blob) => blob.text())
+//   .then((markdown) => {
+//     console.log(marked.parse(markdown));
+//   });
 
 //   <side-bar id="nav"></side-bar>
 //   <div class="section-title purple">recently...</div>

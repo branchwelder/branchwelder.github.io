@@ -1,4 +1,4 @@
-import { twitter, github, instagram, scholar, mail } from "./icons";
+import { twitter, github, instagram, scholar, mail } from "../src/assets/icons";
 
 export default [
   {

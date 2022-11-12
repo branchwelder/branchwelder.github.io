@@ -1,5 +1,5 @@
 import { LitElement, html } from "lit";
-import { router } from "../index";
+import { router } from "../router";
 
 export class CVPage extends LitElement {
   static get properties() {

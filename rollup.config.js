@@ -1,13 +1,11 @@
 import nodeResolve from "@rollup/plugin-node-resolve";
 import babel from "@rollup/plugin-babel";
 import copy from "rollup-plugin-copy";
+import html from "@web/rollup-plugin-html";
 import { terser } from "rollup-plugin-terser";
-
 import { generateSW } from "rollup-plugin-workbox";
 
-import html from "@web/rollup-plugin-html";
-
-import { importMetaAssets } from "@web/rollup-plugin-import-meta-assets";
+var path = require("path");
 
 export default {
   // input: "index.html",
@@ -21,27 +19,31 @@ export default {
   preserveEntrySignatures: false,
 
   plugins: [
+    // Copy everything in the public and content folders to dist
     copy({
       targets: [
-        { src: "assets/fonts", dest: "dist/assets" },
-        { src: "assets/images", dest: "dist/assets" },
+        { src: "public", dest: "dist" },
+        { src: "content", dest: "dist" },
       ],
     }),
-    /** Enable using HTML as rollup entrypoint */
+
+    // Enable using HTML as rollup entrypoint
     html({
       input: "index.html",
       minify: true,
-      // injectServiceWorker: true,
-      // serviceWorkerPath: "dist/sw.js",
+      injectServiceWorker: true,
+      serviceWorkerPath: "dist/sw.js",
     }),
-    html({ input: "pages/cv.html", flattenOutput: false }),
+
+    // html({ input: "pages/cv.html", flattenOutput: false }),
     // html({ input: "posts/*.html", flattenOutput: false }),
+
     /** Resolve bare module imports */
     nodeResolve(),
+
     /** Minify JS */
     terser(),
-    /** Bundle assets references via import.meta.url */
-    importMetaAssets(),
+
     /** Compile JS to a lower language target */
     babel({
       babelHelpers: "bundled",
@@ -78,17 +80,18 @@ export default {
         ],
       ],
     }),
-    /** Create and inject a service worker */
-    // generateSW({
-    //   navigateFallback: "/index.html",
-    //   // where to output the generated sw
-    //   swDest: path.join("dist", "sw.js"),
-    //   // directory to match patterns against to be precached
-    //   globDirectory: path.join("dist"),
-    //   // cache any html js and css by default
-    //   globPatterns: ["**/*.{html,js,css,webmanifest}"],
-    //   skipWaiting: true,
-    //   clientsClaim: true,
-    // }),
+
+    // Create and inject a service worker
+    generateSW({
+      navigateFallback: "/index.html",
+      // where to output the generated sw
+      swDest: path.join("dist", "sw.js"),
+      // directory to match patterns against to be precached
+      globDirectory: path.join("dist"),
+      // cache any html js and css by default
+      globPatterns: ["**/*.{html,js,css,webmanifest}"],
+      skipWaiting: true,
+      clientsClaim: true,
+    }),
   ],
 };

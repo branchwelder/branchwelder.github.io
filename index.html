@@ -1,48 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <meta name="Description" content="hannah's portfolio." />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./public/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./public/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./public/favicon/favicon-16x16.png"
+    />
+    <base href="/" />
+    <title>hannah</title>
+  </head>
+  <style>
+    @font-face {
+      font-family: "Inter";
+      src: url("./public/fonts/Inter-Variable.ttf");
+      font-weight: 1 999;
+    }
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="Description" content="hannah's portfolio." />
-  <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon/apple-touch-icon.png" />
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon/favicon-16x16.png" />
-  <base href="/">
-  <title>hannah</title>
-</head>
-<style>
-  @font-face {
-    font-family: "Inter";
-    src: url("./assets/fonts/Inter-Variable.ttf");
-    font-weight: 1 999;
-  }
+    :root {
+      --cursor-default: url("./public/cursor/cursor.cur");
+      --cursor-pointer: url("./public/cursor/pointer.cur");
+      --cursor-move: url("./public/cursor/move.cur");
+      --cursor-beam: url("./public/cursor/beam.cur");
+    }
 
-  :root {
-    --cursor-default: url("./assets/cursor/cursor.cur");
-    --cursor-pointer: url("./assets/cursor/pointer.cur");
-    --cursor-move: url("./assets/cursor/move.cur");
-    --cursor-beam: url("./assets/cursor/beam.cur");
-  }
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Inter;
+      cursor: var(--cursor-default), auto;
+    }
 
-  html,
-  body {
-    margin: 0;
-    padding: 0;
-    font-family: Inter;
-    cursor: var(--cursor-default), auto;
-  }
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+  </style>
 
-  *,
-  *::before,
-  *::after {
-    box-sizing: border-box;
-  }
-</style>
-
-<body>
-  <div id="outlet"></div>
-  <script type="module" src="./src/router.js"></script>
-</body>
-
+  <body>
+    <div id="outlet"></div>
+    <script type="module" src="./src/router.js"></script>
+  </body>
 </html>

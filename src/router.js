@@ -9,20 +9,22 @@ const routes = [
   {
     path: "/",
     component: "portfolio-home",
-    children: [{ path: "/", component: "project-grid" }],
+    children: [
+      { path: "/", component: "project-grid" },
+      {
+        path: "/about",
+        component: "twigg-about",
+        action: async () => {
+          await import("./pages/about");
+        },
+      },
+    ],
   },
   {
     path: "/cv",
     component: "twigg-cv",
     action: async () => {
       await import("./pages/cv");
-    },
-  },
-  {
-    path: "/about",
-    component: "twigg-about",
-    action: async () => {
-      await import("./pages/about");
     },
   },
   { path: "(.*)", component: "oh-no" },

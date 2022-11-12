@@ -31,7 +31,7 @@ export class SocialIcon extends LitElement {
         background-color: var(--hover);
       }
       #tag:hover path {
-        fill: var(--base0);
+        fill: var(--black);
       }
     `;
   }
@@ -42,7 +42,11 @@ export class SocialIcon extends LitElement {
   }
 
   render() {
-    return html`<a href=${this.social.url} title=${this.social.service}>
+    return html`<a
+      href=${this.social.url}
+      target="_blank"
+      rel="noreferrer noopener"
+    >
       <div id="tag" style="--hover: var(--${this.social.color})">
         ${this.social.icon}
       </div></a

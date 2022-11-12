@@ -1,12 +1,23 @@
+// Themes have ten colors: black, white, pink, red, orange, yellow, green,
+// cyan, blue, and purple. There are no base intermediate shades. Those
+// can be calculated from black and white.
+
 export const themes = {
+  base: {
+    "--black": "black",
+    "--white": "white",
+    "--pink": "pink",
+    "--red": "red",
+    "--orange": "orange",
+    "--yellow": "yellow",
+    "--green": "green",
+    "--cyan": "cyan",
+    "--blue": "blue",
+    "--purple": "purple",
+  },
   solarized: {
-    "--base0": "#002b36",
-    "--base1": "#073642",
-    "--base2": "#586e75",
-    "--base3": "#657b83",
-    "--base4": "#93a1a1",
-    "--base5": "#eee8d5",
-    "--base6": "#fdf6e3",
+    "--black": "#002b36",
+    "--white": "#fdf6e3",
     "--pink": "#d33682",
     "--red": "#dc322f",
     "--orange": "#cb4b16",
@@ -17,8 +28,8 @@ export const themes = {
     "--purple": "#6c71c4",
   },
   dracula: {
-    "--base0": "#44475a",
-    "--base6": "#f8f8f2",
+    "--black": "#282a36",
+    "--white": "#f8f8f2",
     "--pink": "#ff79c6",
     "--red": "#ff5555",
     "--orange": "#ffad55",
@@ -29,13 +40,8 @@ export const themes = {
     "--purple": "#9674c8",
   },
   nord: {
-    "--base0": "#2e3440",
-    "--base1": "#3b4252",
-    "--base2": "#434c5e",
-    "--base3": "#4c566a",
-    "--base4": "#d8dee9",
-    "--base5": "#e5e9f0",
-    "--base6": "#eceff4",
+    "--black": "#2e3440",
+    "--white": "#eceff4",
     "--pink": "#e892b2",
     "--red": "#bf616a",
     "--orange": "#d08770",

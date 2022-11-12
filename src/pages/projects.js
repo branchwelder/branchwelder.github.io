@@ -24,6 +24,10 @@ export class ProjectGrid extends LitElement {
 
   static get styles() {
     return css`
+      :host {
+        max-width: 1000px;
+        display: block;
+      }
       #project-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));

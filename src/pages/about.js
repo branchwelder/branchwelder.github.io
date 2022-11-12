@@ -8,20 +8,20 @@ export class About extends LitElement {
     };
   }
 
-  static get styles() {
-    return css`
-      :host {
-        background-color: var(--base0);
-      }
-    `;
-  }
+  static styles = css`
+    #headshot {
+      width: 20rem;
+    }
+  `;
 
   constructor() {
     super();
     this.location = router.location;
   }
   render() {
-    return html`aboot!`;
+    return html`<div>
+      <img id="headshot" src=${`../../content/bio/headshot.jpg`} />
+    </div>`;
   }
 }
 

@@ -14,7 +14,7 @@ export class ProjectTile extends LitElement {
         aspect-ratio: 1;
       }
       #root {
-        border: 1px solid var(--base0);
+        border: 1px solid var(--black);
       }
       :host {
         position: relative;
@@ -51,38 +51,3 @@ export class ProjectTile extends LitElement {
   }
 }
 customElements.define("project-tile", ProjectTile);
-
-// <!-- <div id="post-title">interesting title</div> -->
-// <!-- <h3>playdate interactive art toy</h3> -->
-// <!-- <div id="tags">
-// <span class="tag cyan">fun</span>
-// <span class="tag purple">research</span>
-// <span class="tag pink">theming</span>
-// </div> -->
-// <!-- <h3>playdate!</h3> -->
-// <!-- <div id="description">
-// Incidunt qui cupiditate rerum qui odit error accusamus. Quia libero a
-// aut iste deleniti voluptates non cumque. Et sed et quis totam
-// aspernatur.
-// </div> -->
-
-// #post-title {
-//   padding: 0.5rem;
-//   font-size: larger;
-//   font-weight: bolder;
-// }
-// #description {
-//   padding: 0.5rem;
-//   color: var(--base4);
-//   font-weight: 300;
-// }
-// #tags {
-//   display: flex;
-//   flex-flow: row wrap;
-//   /* gap: 0.2rem; */
-// }
-
-// #post-container {
-//   background-color: var(--base2);
-//   /* border-radius: 0.5rem; */
-// }

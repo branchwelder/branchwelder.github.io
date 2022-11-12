@@ -6,20 +6,6 @@ import { themes } from "../assets/themes";
 import "../common/social-icon";
 import socials from "../../content/socials";
 
-import "../common/project-tile";
-import projects from "../../content/projects";
-
-const colors = [
-  "pink",
-  "red",
-  "orange",
-  "yellow",
-  "green",
-  "cyan",
-  "blue",
-  "purple",
-];
-
 export class Home extends LitElement {
   static properties = {
     theme: {},
@@ -29,55 +15,72 @@ export class Home extends LitElement {
   static get styles() {
     return css`
       #main {
-        height: 100%;
+        min-height: 100%;
+        min-width: 100%;
         position: absolute;
-        background-color: var(--base0, black);
-        color: var(--base6, white);
+        background-color: var(--black, black);
+        color: var(--white, white);
+        display: flex;
+      }
+      #nav {
+        padding: 1rem;
+        width: fit-content;
+        height: fit-content;
+        position: sticky;
+        top: 0;
+        display: flex;
+      }
+      #content {
+        position: relative;
+        z-index: 0;
+        display: inline-block;
+        padding: 1rem;
       }
       #nameHeader {
-        color: var(--base6);
+        color: var(--white);
         font-size: 2rem;
         font-weight: 999;
         font-style: italic;
-        margin-bottom: 1rem;
+        cursor: var(--cursor-pointer), pointer;
+        user-select: none;
+        width: fit-content;
       }
-      #nav {
-        flex: 1;
-        padding: 1rem;
-      }
-      #footer {
-        flex: 1;
-        padding: 1rem;
-      }
-      #site {
-        position: relative;
-        background-color: var(--base0);
-        z-index: 0;
+      #nameHeader:hover {
+        color: var(--yellow);
       }
       #socials {
         display: flex;
-        margin-top: 1rem;
+      }
+      #links {
+        display: flex;
+      }
+      .link {
+        color: var(--white);
+        outline: 1px solid var(--white);
+        padding: 0.2rem;
+        cursor: var(--cursor-pointer), pointer;
+      }
+      .link:hover {
+        background-color: var(--green);
+        color: var(--black);
+      }
+      a {
+        text-decoration: none;
       }
       /* Mobile mode */
       @media only screen and (max-width: 767px) {
-        #site {
-          display: flex;
-          -webkit-box-direction: normal;
-          -webkit-box-orient: vertical;
+        #main {
           flex-direction: column;
-          -webkit-box-align: center;
-          align-items: center;
         }
         #nav {
-          text-align: center;
-        }
-        #content {
-          max-width: 100%;
-          padding-right: 8%;
-          padding-left: 8%;
-        }
-        #footer {
-          text-align: center;
+          text-align: left;
+          z-index: 10;
+          background: var(--black);
+          width: auto;
+          flex-direction: row;
+          width: auto;
+          align-items: center;
+          justify-content: space-between;
         }
         #socials,
         #links {
@@ -86,46 +89,18 @@ export class Home extends LitElement {
       }
       /* Desktop mode */
       @media only screen and (min-width: 767px) {
-        #site {
-          display: flex;
-          justify-content: center;
-          -webkit-box-direction: normal;
-          -webkit-box-orient: horizontal;
+        #main {
           flex-direction: row;
-          overflow: auto;
-          height: 100%;
         }
         #nav {
+          gap: 1rem;
           text-align: right;
-        }
-        #content {
-          max-width: 60%;
-          padding: 1rem;
+          flex-direction: column;
         }
         #socials,
         #links {
           justify-content: end;
         }
-      }
-
-      #links {
-        display: flex;
-      }
-
-      .link {
-        color: var(--base6);
-        outline: 1px solid var(--base6);
-        padding: 0.2rem;
-        cursor: var(--cursor-pointer), pointer;
-      }
-
-      .link:hover {
-        background-color: var(--green);
-        color: var(--base0);
-      }
-
-      a {
-        text-decoration: none;
       }
     `;
   }
@@ -139,23 +114,22 @@ export class Home extends LitElement {
   render() {
     return html`
       <div id="main" style=${styleMap(themes[this.theme])}>
-        <div id="site">
-          <div id="nav">
-            <div id="nameHeader">hannah twigg-smith</div>
-            <div id="links">
-              <a href="/cv"><span class="link">CV</span></a>
-              <a href="/about"><span class="link">about</span></a>
-            </div>
-            <div id="socials">
-              ${socials.map(
-                (social) => html`<social-icon .social=${social}></social-icon>`
-              )}
-            </div>
+        <div id="nav">
+          <a href="/"
+            ><div id="nameHeader">hannah<br />twigg&#8209;smith</div>
+          </a>
+          <div id="links">
+            <a href="/cv"><span class="link">CV</span></a>
+            <a href="/about"><span class="link">about</span></a>
           </div>
-          <div id="content">
-            <slot></slot>
+          <div id="socials">
+            ${socials.map(
+              (social) => html`<social-icon .social=${social}></social-icon>`
+            )}
           </div>
-          <div id="footer"></div>
+        </div>
+        <div id="content">
+          <slot></slot>
         </div>
       </div>
     `;
@@ -163,82 +137,3 @@ export class Home extends LitElement {
 }
 
 customElements.define("portfolio-home", Home);
-
-// ${projects.map(
-//   (project) =>
-//     html`<project-tile
-//       .project=${project}
-//       style="--hovercolor: var(--${colors[
-//         Math.floor(Math.random() * colors.length)
-//       ]})"
-//     ></project-tile>`
-// )}
-
-// import { marked } from "marked";
-// fetch("../posts/squares.md")
-//   .then((response) => response.blob())
-//   .then((blob) => blob.text())
-//   .then((markdown) => {
-//     console.log(marked.parse(markdown));
-//   });
-
-//   <side-bar id="nav"></side-bar>
-//   <div class="section-title purple">recently...</div>
-//   <div class="section">
-//     Here are some things I'm up to right now
-//     <ul>
-//       <li>going to SCF and UIST 2022</li>
-//       <li>playing around with the Playdate</li>
-//       <li>hanging out with my cat, Jaskier</li>
-//     </ul>
-//   </div>
-//   <div class="section-title cyan">full papers</div>
-//   <div class="section">
-//     ${papers.map(
-//       (paper) =>
-//         html`<portfolio-paper .paper=${paper}></portfolio-paper>`
-//     )}
-//   </div>
-//   <div class="section-title green">demonstrations</div>
-//   <div class="section">
-//     ${demos.map(
-//       (demo) =>
-//         html`<portfolio-paper .paper=${demo}></portfolio-paper>`
-//     )}
-//   </div>
-
-// .cyan {
-//   background-color: var(--cyan);
-// }
-// .purple {
-//   background-color: var(--purple);
-// }
-// .green {
-//   background-color: var(--green);
-// }
-// .pink {
-//   background-color: var(--pink);
-// }
-// .red {
-//   background-color: var(--red);
-// }
-// .blue {
-//   background-color: var(--blue);
-// }
-
-/* margin: 0;
-        padding: 0;
-        width: 15rem;
-        background-color: var(--base2);
-        position: fixed;
-        height: 100%;
-        overflow: auto; */
-/* background-color: var(--base3); */
-
-// .section-title {
-//   color: var(--base0);
-//   font-size: 1.5rem;
-//   font-weight: 999;
-//   font-style: italic;
-//   padding: 0.3rem 1rem;
-// }

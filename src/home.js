@@ -17,6 +17,17 @@ import "./social";
 import socials from "../resources/socials";
 import projects from "../resources/projects";
 
+const colors = [
+  "pink",
+  "red",
+  "orange",
+  "yellow",
+  "green",
+  "cyan",
+  "blue",
+  "purple",
+];
+
 export class Home extends LitElement {
   static properties = {
     theme: {},
@@ -35,6 +46,7 @@ export class Home extends LitElement {
         font-size: 2rem;
         font-weight: 999;
         font-style: italic;
+        margin-bottom: 1rem;
       }
       #nav {
         flex: 1;
@@ -42,6 +54,7 @@ export class Home extends LitElement {
       }
       #footer {
         flex: 1;
+        padding: 1rem;
       }
       #content {
         display: grid;
@@ -87,9 +100,14 @@ export class Home extends LitElement {
           -webkit-box-orient: horizontal;
           flex-direction: row;
           min-height: 100%;
+          overflow: auto;
         }
         #nav {
           text-align: right;
+          position: -webkit-sticky; /* for Safari */
+          position: sticky;
+          top: 0;
+          align-self: flex-start; /* <-- this is the fix */
         }
         #content {
           max-width: 60%;
@@ -97,7 +115,6 @@ export class Home extends LitElement {
         }
         #socials {
           justify-content: end;
-          bottom: 0;
         }
       }
     `;
@@ -105,12 +122,11 @@ export class Home extends LitElement {
 
   constructor() {
     super();
-    this.theme = "nord";
+    this.theme = "dracula";
   }
 
   render() {
     const theme = themes[this.theme];
-
     return html`
       <main style=${styleMap(theme)}>
         <div id="site">
@@ -128,6 +144,9 @@ export class Home extends LitElement {
               (project) =>
                 html`<portfolio-project
                   .project=${project}
+                  style="--hovercolor: var(--${colors[
+                    Math.floor(Math.random() * colors.length)
+                  ]})"
                 ></portfolio-project>`
             )}
           </div>

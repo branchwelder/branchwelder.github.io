@@ -10,6 +10,8 @@ export class Project extends LitElement {
       #teaser {
         width: 100%;
         display: block;
+        object-fit: cover;
+        aspect-ratio: 1;
       }
       #root {
         border: 1px solid var(--base0);
@@ -23,14 +25,14 @@ export class Project extends LitElement {
         z-index: -1;
         inset: 1px;
         transform: translate(0, 0);
-        background-color: var(--blue);
+        background-color: var(--hovercolor);
       }
       :host(:focus-within)::before,
       :host(:hover)::before {
-        transform: translate(calc(2rem * -0.125), calc(2rem * 0.125));
+        transform: translate(calc(3rem * -0.125), calc(3rem * 0.125));
       }
       #root:hover {
-        transform: translate(calc(2rem * 0.125), calc(2rem * -0.125));
+        transform: translate(calc(3rem * 0.125), calc(3rem * -0.125));
         cursor: var(--cursor-pointer), pointer;
       }
       #root,
@@ -40,19 +42,10 @@ export class Project extends LitElement {
     `;
   }
 
-  constructor() {
-    super();
-    this.project = {};
-  }
-
   render() {
     return html`
       <div id="root">
-        <img
-          id="teaser"
-          src="../assets/images/grid_painting.jpg"
-          src=${`..${this.project.url}/teaser.jpg`}
-        />
+        <img id="teaser" src=${`..${this.project.url}/teaser.jpg`} />
       </div>
     `;
   }

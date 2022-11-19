@@ -6,7 +6,7 @@ import { marked } from "marked";
 // Import Hightlight.js and register selected languages
 // import hljs from "highlight.js";
 // import hljs from "highlight.js/lib/common";
-import hljs from "highlight.js";
+// import hljs from "highlight.js";
 // import javascript from "highlight.js/lib/languages/javascript";
 // import python from "highlight.js/lib/languages/python";
 // hljs.registerLanguage("javascript", javascript);

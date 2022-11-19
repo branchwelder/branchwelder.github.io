@@ -2,7 +2,23 @@ import { LitElement, html, css } from "lit";
 import { router } from "../router";
 
 import { marked } from "marked";
-import fm from "front-matter";
+
+// Import Hightlight.js and register selected languages
+// import hljs from "highlight.js";
+// import hljs from "highlight.js/lib/common";
+import hljs from "highlight.js";
+// import javascript from "highlight.js/lib/languages/javascript";
+// import python from "highlight.js/lib/languages/python";
+// hljs.registerLanguage("javascript", javascript);
+// hljs.registerLanguage("python", python);
+
+const escapeMap = {
+  "&": "&amp;",
+  "<": "&lt;",
+  ">": "&gt;",
+  '"': "&quot;",
+  "'": "&#39;",
+};
 
 export class Post extends LitElement {
   static get properties() {
@@ -13,9 +29,17 @@ export class Post extends LitElement {
 
   static get styles() {
     return css`
-      /* :host {
-        background-color: var(--green);
-      } */
+      h1 {
+        margin-top: 0;
+      }
+      .italicText {
+        color: var(--pink);
+        font-style: italic;
+      }
+      .boldText {
+        color: var(--yellow);
+        font-weight: 900;
+      }
     `;
   }
 
@@ -29,10 +53,8 @@ export class Post extends LitElement {
     const renderer = {
       heading: this.heading,
       image: this.image,
-      text: this.text,
-      hr: this.hr,
-      paragraph: this.paragraph,
-      checkbox: this.checkbox,
+      em: this.em,
+      strong: this.strong,
       code: this.code,
     };
 
@@ -53,30 +75,35 @@ export class Post extends LitElement {
   }
 
   image(href, title, text) {
-    console.log(href);
-    return "IMAGE";
+    return `<img src=${href} alt="${text}" width="100%" />`;
   }
 
-  text(text) {
-    console.log(text);
-    return text;
-  }
-
-  paragraph(text) {
-    return text;
-  }
-
-  checkbox(checked) {
-    return `IS IT CHECKED? ${checked}`;
+  escapeForHTML(input) {
+    return input.replace(/([&<>'"])/g, (char) => escapeMap[char]);
   }
 
   code(code, infostring, escaped) {
-    console.log(infostring);
-    return code;
+    // Check whether the given language is valid for highlight.js.
+    // const validLang = !!(language && hls.getLanguage(language));
+
+    // // Highlight only if the language is valid.
+    // // highlight.js escapes HTML in the code, but we need to escape by ourselves
+    // // when we don't use it.
+    // const highlighted = validLang
+    //   ? hljs.highlight(language, code).value
+    //   : this.escapeForHTML(code);
+
+    // // Render the highlighted code with `hljs` class.
+    // return `<pre><code class="hljs ${language}">${highlighted}</code></pre>`;
+    return `<pre><code>${code}</code></pre>`;
   }
 
-  hr() {
-    return "TAKE A BREAK";
+  em(text) {
+    return `<span class="italicText">${text}</span>`;
+  }
+
+  strong(text) {
+    return `<span class="boldText">${text}</span>`;
   }
 
   render() {

@@ -46,11 +46,10 @@ export class ProjectGrid extends LitElement {
       ${projects.map(
         (project) =>
           html`<project-tile
-          .project=${project}
-          style="--hovercolor: var(--${
-            colors[Math.floor(Math.random() * colors.length)]
-          })"
-        ></project-tile></div>`
+            .project=${project}
+            style="--hovercolor: var(--${colors[
+              Math.floor(Math.random() * colors.length)
+            ]})"></project-tile>`
       )}
     </div>`;
   }

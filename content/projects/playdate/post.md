@@ -1,9 +1,5 @@
----
-title: "squares"
-author: "branchwelder"
-date: "2022-09-05"
----
+# Squares: A little art toy for the playdate
 
-# Squares
+I made a little square game for the [playdate](https://play.date)!
 
-I made a little square game for the playdate!
+I posted it on instagram and it got picked up by _The Algorithm_, receiving quite a response.

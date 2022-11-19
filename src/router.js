@@ -34,6 +34,13 @@ const routes = [
       await import("./pages/cv");
     },
   },
+  {
+    path: "/papers/:paper",
+    component: "twigg-paper",
+    action: async () => {
+      await import("./pages/paper");
+    },
+  },
   { path: "(.*)", component: "oh-no" },
 ];
 

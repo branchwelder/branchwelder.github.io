@@ -45,7 +45,11 @@ export class ProjectTile extends LitElement {
   render() {
     return html`
       <div id="root">
-        <img id="teaser" src=${`..${this.project.url}/teaser.jpg`} />
+        <a href=${`projects/${this.project}`}>
+          <img
+            id="teaser"
+            src=${`../content/projects/${this.project}/teaser.jpg`} />
+        </a>
       </div>
     `;
   }

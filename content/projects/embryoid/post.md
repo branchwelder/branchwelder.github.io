@@ -1,12 +1,6 @@
----
-title: embryoid
-author: branchwelder
-date: 2022-09-05
----
-
 # Stitching code
 
-Hello we're gonna stitch some code today!
+**Hello** we're gonna _stitch some code_ today!
 
 ```py
 def code():

@@ -5,7 +5,7 @@ import {
   scholar,
   mail,
   linkedin,
-} from "../src/assets/icons";
+} from "../src/assets/icons.js";
 
 export default [
   {

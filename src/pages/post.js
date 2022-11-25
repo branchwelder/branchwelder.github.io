@@ -1,16 +1,5 @@
-import { LitElement, html, css } from "lit";
-import { router } from "../router";
-
-import { marked } from "marked";
-
-// Import Hightlight.js and register selected languages
-// import hljs from "highlight.js";
-// import hljs from "highlight.js/lib/common";
-// import hljs from "highlight.js";
-// import javascript from "highlight.js/lib/languages/javascript";
-// import python from "highlight.js/lib/languages/python";
-// hljs.registerLanguage("javascript", javascript);
-// hljs.registerLanguage("python", python);
+import { LitElement, html, css } from "../libs/lit.js";
+import { router } from "../../router.js";
 
 const escapeMap = {
   "&": "&amp;",
@@ -83,18 +72,6 @@ export class Post extends LitElement {
   }
 
   code(code, infostring, escaped) {
-    // Check whether the given language is valid for highlight.js.
-    // const validLang = !!(language && hls.getLanguage(language));
-
-    // // Highlight only if the language is valid.
-    // // highlight.js escapes HTML in the code, but we need to escape by ourselves
-    // // when we don't use it.
-    // const highlighted = validLang
-    //   ? hljs.highlight(language, code).value
-    //   : this.escapeForHTML(code);
-
-    // // Render the highlighted code with `hljs` class.
-    // return `<pre><code class="hljs ${language}">${highlighted}</code></pre>`;
     return `<pre><code>${code}</code></pre>`;
   }
 

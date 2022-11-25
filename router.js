@@ -1,9 +1,9 @@
-import { Router } from "@vaadin/router";
+import { Router } from "https://unpkg.com/@vaadin/router";
 
 // Import home and error pages by default
-import "./pages/home";
-import "./pages/projects";
-import "./pages/ohno";
+import "./src/pages/home.js";
+import "./src/pages/projects.js";
+import "./src/pages/ohno.js";
 
 const routes = [
   {
@@ -15,14 +15,14 @@ const routes = [
         path: "/about",
         component: "twigg-about",
         action: async () => {
-          await import("./pages/about");
+          await import("./src/pages/about.js");
         },
       },
       {
         path: "/projects/:post",
         component: "twigg-post",
         action: async () => {
-          await import("./pages/post");
+          await import("./src/pages/post.js");
         },
       },
     ],
@@ -31,14 +31,14 @@ const routes = [
     path: "/cv",
     component: "twigg-cv",
     action: async () => {
-      await import("./pages/cv");
+      await import("./src/pages/cv.js");
     },
   },
   {
     path: "/papers/:paper",
     component: "twigg-paper",
     action: async () => {
-      await import("./pages/paper");
+      await import("./src/pages/paper.js");
     },
   },
   { path: "(.*)", component: "oh-no" },

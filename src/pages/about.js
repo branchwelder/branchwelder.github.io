@@ -1,5 +1,5 @@
-import { LitElement, html, css } from "lit";
-import { router } from "../router";
+import { LitElement, html, css } from "../libs/lit.js";
+import { router } from "../../router.js";
 
 export class About extends LitElement {
   static get properties() {

@@ -1,8 +1,8 @@
-import { LitElement, html, css } from "lit";
-import { router } from "../router";
+import { LitElement, html, css } from "../libs/lit.js";
+import { router } from "../../router.js";
 
-import "../common/project-tile";
-import projects from "../../content/projects";
+import "../common/project-tile.js";
+import projects from "../../content/projects.js";
 
 const colors = [
   "pink",
@@ -49,7 +49,8 @@ export class ProjectGrid extends LitElement {
             .project=${project}
             style="--hovercolor: var(--${colors[
               Math.floor(Math.random() * colors.length)
-            ]})"></project-tile>`
+            ]})"
+          ></project-tile>`
       )}
     </div>`;
   }

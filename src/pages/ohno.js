@@ -1,5 +1,5 @@
-import { LitElement, html, css } from "lit";
-import { router } from "../router";
+import { LitElement, html, css } from "../libs/lit.js";
+import { router } from "../../router.js";
 
 export class OhNo extends LitElement {
   static get properties() {
@@ -21,7 +21,7 @@ export class OhNo extends LitElement {
     this.location = router.location;
   }
   render() {
-    return html`UH OH! NOT FOUND!`;
+    return html`UH OH!`;
   }
 }
 

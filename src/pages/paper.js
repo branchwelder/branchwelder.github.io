@@ -1,5 +1,5 @@
-import { LitElement, html, css } from "lit";
-import { router } from "../router";
+import { LitElement, html, css } from "../libs/lit.js";
+import { router } from "../../router.js";
 
 export class Paper extends LitElement {
   static get properties() {
@@ -25,7 +25,8 @@ export class Paper extends LitElement {
     return html`<embed
       id="cv"
       src="../content/papers/${this.location.params.paper}.pdf"
-      type="application/pdf" />`;
+      type="application/pdf"
+    />`;
   }
 }
 

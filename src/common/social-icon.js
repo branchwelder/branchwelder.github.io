@@ -1,4 +1,4 @@
-import { LitElement, html, css } from "lit";
+import { LitElement, html, css } from "../libs/lit.js";
 
 export class SocialIcon extends LitElement {
   static properties = {

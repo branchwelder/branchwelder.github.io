@@ -1,5 +1,5 @@
-import { LitElement, html, css } from "lit";
-import { router } from "../router";
+import { LitElement, html, css } from "../libs/lit.js";
+import { router } from "../../router.js";
 
 export class CV extends LitElement {
   static get properties() {
@@ -23,7 +23,7 @@ export class CV extends LitElement {
   render() {
     return html`<embed
       id="cv"
-      src="../content/twigg-smith_cv.pdf"
+      src="../../content/twigg_smith_cv.pdf"
       type="application/pdf"
     />`;
   }

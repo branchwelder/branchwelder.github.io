@@ -1,10 +1,10 @@
-import { router } from "../router";
-import { LitElement, html, css } from "lit";
-import { styleMap } from "lit/directives/style-map.js";
-import { themes } from "../assets/themes";
+import { router } from "../../router.js";
+import { LitElement, html, css, styleMap } from "../libs/lit.js";
 
-import "../common/social-icon";
-import socials from "../../content/socials";
+import { themes } from "../assets/themes.js";
+
+import "../common/social-icon.js";
+import socials from "../../content/socials.js";
 
 export class Home extends LitElement {
   static properties = {
@@ -116,9 +116,7 @@ export class Home extends LitElement {
 
   render() {
     return html`
-      <div
-        id="main"
-        style=${styleMap(themes[this.theme])}>
+      <div id="main" style=${styleMap(themes[this.theme])}>
         <div id="nav">
           <a href="/"
             ><div id="nameHeader">hannah<br />twigg&#8209;smith</div>

@@ -1,4 +1,4 @@
-import { LitElement, html, css } from "lit";
+import { LitElement, html, css } from "../libs/lit.js";
 
 export class ProjectTile extends LitElement {
   static properties = {
@@ -48,7 +48,8 @@ export class ProjectTile extends LitElement {
         <a href=${`projects/${this.project}`}>
           <img
             id="teaser"
-            src=${`../content/projects/${this.project}/teaser.jpg`} />
+            src=${`../content/projects/${this.project}/teaser.jpg`}
+          />
         </a>
       </div>
     `;

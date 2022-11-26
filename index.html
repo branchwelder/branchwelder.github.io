@@ -13,17 +13,14 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
   <script type="module" src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <script type="text/javascript">
+    // This little script is used to trick github pages into hosting single page apps.
+    // It's used along with the custom 404.html page in this repo, which redirects. For more info, 
+    // see https://www.smashingmagazine.com/2016/08/sghpa-single-page-app-hack-github-pages/
     (function () {
       var redirect = sessionStorage.redirect;
       delete sessionStorage.redirect;
       if (redirect && redirect != location.href) {
         history.replaceState(null, null, redirect);
-        // REMOVE THIS - just showing the redirect route in the UI
-        document.body.setAttribute('message', 'This page was redirected by 404.html, from the route: ' + redirect);
-      }
-      else {
-        // REMOVE THIS - just showing the redirect route in the UI
-        document.body.setAttribute('message', 'This page was loaded directly from the index.html file');
       }
     })();
   </script>
@@ -63,10 +60,6 @@
     padding: 0;
   }
 
-  body:before {
-    content: attr(message);
-  }
-
   *,
   *::before,
   *::after {
@@ -76,6 +69,9 @@
 
 
 <body>
+  <noscript>
+    You need to enable JavaScript to run this app.
+  </noscript>
   <div id="outlet"></div>
   <script type="module" src="./router.js"></script>
 </body>

@@ -1,81 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
-    />
-    <meta name="Description" content="hannah's website." />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="./public/favicon/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="./public/favicon/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="./public/favicon/favicon-16x16.png"
-    />
-    <base href="/" />
-    <title>twigg</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
 
-    <script
-      type="module"
-      src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"
-    ></script>
-  </head>
-  <style>
-    @font-face {
-      font-family: "Inter";
-      src: url("./public/fonts/Inter-Variable.ttf");
-      font-weight: 1 999;
-    }
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="Description" content="hannah's website." />
+  <link rel="apple-touch-icon" sizes="180x180" href="./public/favicon/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./public/favicon/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="./public/favicon/favicon-16x16.png" />
+  <base href="/" />
+  <title>twigg</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+  <script type="module" src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script type="text/javascript">
+    (function () {
+      var redirect = sessionStorage.redirect;
+      delete sessionStorage.redirect;
+      if (redirect && redirect != location.href) {
+        history.replaceState(null, null, redirect);
+        // REMOVE THIS - just showing the redirect route in the UI
+        document.body.setAttribute('message', 'This page was redirected by 404.html, from the route: ' + redirect);
+      }
+      else {
+        // REMOVE THIS - just showing the redirect route in the UI
+        document.body.setAttribute('message', 'This page was loaded directly from the index.html file');
+      }
+    })();
+  </script>
+</head>
+<style>
+  @font-face {
+    font-family: "Inter";
+    src: url("./public/fonts/Inter-Variable.ttf");
+    font-weight: 1 999;
+  }
 
-    :root {
-      --cursor-default: url("./public/cursor/cursor.cur");
-      --cursor-pointer: url("./public/cursor/pointer.cur");
-      --cursor-move: url("./public/cursor/move.cur");
-      --cursor-beam: url("./public/cursor/beam.cur");
-      /* Default colors are nord theme */
-      --black: #2e3440;
-      --white: #eceff4;
-      --pink: #e892b2;
-      --red: #bf616a;
-      --orange: #d08770;
-      --yellow: #ebcb8b;
-      --green: #a3be8c;
-      --cyan: #88c0d0;
-      --blue: #5e81ac;
-      --purple: #b48ead;
-      font-family: Inter;
-      cursor: var(--cursor-default), auto;
-      background: var(--black);
-    }
+  :root {
+    --cursor-default: url("./public/cursor/cursor.cur");
+    --cursor-pointer: url("./public/cursor/pointer.cur");
+    --cursor-move: url("./public/cursor/move.cur");
+    --cursor-beam: url("./public/cursor/beam.cur");
+    /* Default colors are nord theme */
+    --black: #2e3440;
+    --white: #eceff4;
+    --pink: #e892b2;
+    --red: #bf616a;
+    --orange: #d08770;
+    --yellow: #ebcb8b;
+    --green: #a3be8c;
+    --cyan: #88c0d0;
+    --blue: #5e81ac;
+    --purple: #b48ead;
+    font-family: Inter;
+    cursor: var(--cursor-default), auto;
+    background: var(--black);
+    color: var(--white)
+  }
 
-    html,
-    body {
-      margin: 0;
-      padding: 0;
-    }
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+  }
 
-    *,
-    *::before,
-    *::after {
-      box-sizing: border-box;
-    }
-  </style>
+  body:before {
+    content: attr(message);
+  }
 
-  <body>
-    <div id="outlet"></div>
-    <script type="module" src="./router.js"></script>
-  </body>
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+</style>
+
+
+<body>
+  <div id="outlet"></div>
+  <script type="module" src="./router.js"></script>
+</body>
+
 </html>

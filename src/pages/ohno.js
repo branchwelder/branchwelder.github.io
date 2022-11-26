@@ -21,7 +21,8 @@ export class OhNo extends LitElement {
     this.location = router.location;
   }
   render() {
-    return html`UH OH!`;
+    console.log("something is horribly wrong");
+    return html`Something is horribly wrong`;
   }
 }
 

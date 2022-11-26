@@ -11,7 +11,9 @@ export class OhNo extends LitElement {
   static get styles() {
     return css`
       :host {
-        background-color: var(--base0);
+        width: 100%;
+        display: block;
+        text-align: center;
       }
     `;
   }
@@ -21,8 +23,7 @@ export class OhNo extends LitElement {
     this.location = router.location;
   }
   render() {
-    console.log("something is horribly wrong");
-    return html`Something is horribly wrong`;
+    return html`404: Something has gone horribly wrong!`;
   }
 }
 

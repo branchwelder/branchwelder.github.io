@@ -41,7 +41,11 @@ const routes = [
       await import("./src/pages/paper.js");
     },
   },
-  { path: "(.*)", component: "oh-no" },
+  {
+    path: "(.*)",
+    component: "portfolio-home",
+    children: [{ component: "oh-no" }],
+  },
 ];
 
 const outlet = document.getElementById("outlet");

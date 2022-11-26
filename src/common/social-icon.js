@@ -8,8 +8,9 @@ export class SocialIcon extends LitElement {
   static get styles() {
     return css`
       #tag {
-        height: 2rem;
-        width: 2rem;
+        padding: 0.2rem;
+        aspect-ratio: 1 / 1;
+        height: 100%;
         align-items: center;
         cursor: var(--cursor-pointer), pointer !important;
         display: flex;

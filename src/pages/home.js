@@ -10,99 +10,120 @@ export class Home extends LitElement {
   static properties = {
     theme: {},
     location: {},
+    nav: {},
   };
 
   static get styles() {
     return css`
-      #main {
-        min-height: 100%;
-        min-width: 100%;
-        position: absolute;
-        background-color: var(--black, black);
-        color: var(--white, white);
-        display: flex;
-      }
       #nav {
-        padding: 1rem;
-        width: fit-content;
+        overflow: hidden;
         position: sticky;
+        background-color: var(--black, black);
+        z-index: 100;
         top: 0;
-        display: flex;
-      }
-      #content {
-        position: relative;
-        z-index: 0;
-        display: inline-block;
-        padding: 1rem;
-      }
-      #nameHeader {
         color: var(--white);
-        font-size: 2rem;
-        font-weight: 999;
+      }
+      #navbar {
+        display: flex;
+        justify-content: space-between;
+        height: 2rem;
+        align-items: center;
+      }
+      #navbar a:link {
+        text-decoration: none;
+      }
+      #nav-icon {
+        background: var(--blue);
+        display: inline-block;
+        height: 100%;
+        aspect-ratio: 1/1;
+        cursor: var(--cursor-pointer), pointer;
+      }
+      #nav-icon:hover {
+        background-color: var(--purple);
+      }
+      #name-header {
+        font-size: 1.2rem;
+        text-decoration: none;
+        font-weight: 800;
         font-style: italic;
         cursor: var(--cursor-pointer), pointer;
         user-select: none;
         width: fit-content;
+        padding-left: 0.3rem;
+        color: var(--white);
       }
-      #nameHeader:hover {
+      #name-header:hover {
         color: var(--yellow);
       }
-      #socials {
-        display: flex;
-      }
+
+      #socials,
       #links {
         display: flex;
+        align-items: center;
       }
-      .link {
-        color: var(--white);
-        outline: 1px solid var(--white);
+
+      #links a:link {
+        text-decoration: none;
         padding: 0.2rem;
+        color: var(--white);
         cursor: var(--cursor-pointer), pointer;
       }
-      .link:hover {
-        background-color: var(--green);
-        color: var(--black);
-      }
-      a {
+
+      #links a:visited {
+        color: var(--purple);
         text-decoration: none;
       }
+
+      #links a:hover {
+        color: var(--yellow);
+        text-decoration: underline;
+      }
+
+      #links a:active {
+        color: var(--green);
+        text-decoration: underline;
+      }
+
+      #content {
+        position: relative;
+        z-index: 0;
+        display: flex;
+        margin: 0.5rem 1rem;
+        justify-content: center;
+      }
+
+      #content-container {
+        width: 60rem;
+      }
+
       /* Mobile mode */
       @media only screen and (max-width: 767px) {
-        #main {
+        #nav-content {
+          display: none;
           flex-direction: column;
-        }
-        #nav {
-          text-align: left;
-          z-index: 10;
-          background: var(--black);
-          width: auto;
-          flex-direction: row;
-          width: auto;
           align-items: center;
-          justify-content: space-between;
+          padding: 1rem;
+          gap: 1rem;
         }
-        #socials,
         #links {
-          justify-content: center;
+          font-size: 1.5rem;
         }
       }
       /* Desktop mode */
       @media only screen and (min-width: 767px) {
-        #main {
+        #nav-content {
+          display: flex !important;
           flex-direction: row;
+          gap: 2rem;
+          margin-right: 1rem;
+        }
+        #nav-icon {
+          display: none;
         }
         #nav {
-          gap: 1rem;
-          text-align: right;
-          flex-direction: column;
-          height: 100vh;
-          -webkit-box-sizing: border-box;
-          -moz-box-sizing: border-box;
-          box-sizing: border-box;
-        }
-        #socials,
-        #links {
-          justify-content: end;
+          display: flex;
+          justify-content: space-between;
         }
       }
     `;
@@ -112,18 +133,24 @@ export class Home extends LitElement {
     super();
     this.theme = "nord";
     this.location = router.location;
+    this.nav = false;
   }
 
   render() {
     return html`
-      <div id="main" style=${styleMap(themes[this.theme])}>
-        <div id="nav">
+      <!-- The navigation bar -->
+      <div id="nav">
+        <div id="navbar">
           <a href="/"
-            ><div id="nameHeader">hannah<br />twigg&#8209;smith</div>
+            ><div id="name-header">hannah&nbsp;twigg&#8209;smith</div>
           </a>
+          <div id="nav-icon" @click=${() => (this.nav = !this.nav)}></div>
+        </div>
+        <div id="nav-content" style="display:${this.nav ? "flex" : "none"}">
           <div id="links">
-            <a href="/cv"><span class="link">CV</span></a>
             <a href="/about"><span class="link">about</span></a>
+            /
+            <a href="/cv"><span class="link">cv</span></a>
           </div>
           <div id="socials">
             ${socials.map(
@@ -131,7 +158,10 @@ export class Home extends LitElement {
             )}
           </div>
         </div>
-        <div id="content">
+      </div>
+      <!-- Everything outside of the nav -->
+      <div id="content" style=${styleMap(themes[this.theme])}>
+        <div id="content-container">
           <slot></slot>
         </div>
       </div>

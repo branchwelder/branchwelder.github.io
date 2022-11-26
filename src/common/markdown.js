@@ -1,0 +1,226 @@
+import { LitElement, html, css } from "../libs/lit.js";
+import { renderMarkdown } from "../renderer.js";
+
+export class Markdown extends LitElement {
+  static properties = {
+    markdown: {},
+  };
+
+  static styles = css`
+    /***********************************
+          BLOCK STYLES
+      ************************************/
+    /* Heading 1 */
+    .marked-h1 {
+      color: var(--orange);
+    }
+
+    /* Heading 2 */
+    .marked-h2 {
+      color: var(--pink);
+    }
+
+    /* Heading 3 */
+    .marked-h3 {
+      color: var(--yellow);
+    }
+
+    /* Heading 4 */
+    .marked-h4 {
+      color: var(--green);
+    }
+
+    /* Heading 5 */
+    .marked-h5 {
+      color: var(--blue);
+    }
+
+    /* Heading 6 */
+    .marked-h6 {
+      color: var(--purple);
+    }
+
+    /* Code block */
+    .marked-codeblock {
+      position: relative;
+    }
+
+    /* Makes a lighter background and language label behind the codeblock. */
+    .marked-codeblock::before {
+      content: attr(language);
+      background-color: var(--black);
+      filter: brightness(1.2);
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      z-index: -1;
+      border-radius: 0.5rem;
+      padding: 0.2rem 0.4rem;
+      color: var(--pink);
+      font-weight: 700;
+      font-size: 0.8rem;
+      text-align: right;
+      font-family: "inconsolata", monospace;
+      border-left: 1px solid var(--pink);
+      border-right: 1px solid var(--green);
+    }
+
+    /* .marked-codeblock:hover::before {
+        border-top: 1px solid var(--green);
+        border-bottom: 1px solid var(--pink);
+      } */
+
+    /* Paragraph */
+    .marked-paragraph {
+      font-weight: 300;
+    }
+
+    /***********************************
+          INLINE STYLES
+      ************************************/
+    /* Bold */
+    .marked-strong {
+      color: var(--pink);
+      font-weight: 800;
+    }
+
+    /* Italic */
+    .marked-emph {
+      color: var(--cyan);
+      font-style: italic;
+    }
+
+    /* Both bold and italic */
+    .marked-strong .marked-emph {
+      color: var(--yellow);
+    }
+
+    /* Italic */
+    .marked-codespan {
+      color: var(--green);
+      font-family: "inconsolata", monospace;
+      position: relative;
+    }
+
+    /* Makes a lighter background and language label behind the codeblock. */
+    .marked-codespan::before {
+      content: "";
+      background-color: var(--black);
+      filter: brightness(1.2);
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      z-index: -1;
+      border-radius: 0.5rem;
+    }
+
+    /* Strikethrough */
+    .marked-strikethrough {
+      text-decoration: line-through;
+      font-style: italic;
+      filter: brightness(0.8);
+      font-weight: 100;
+    }
+
+    /* Links */
+    .marked-link:link {
+      color: var(--blue);
+    }
+    .marked-link:visited {
+      color: var(--purple);
+    }
+    .marked-link:hover {
+      color: var(--orange);
+    }
+    .marked-link:active {
+      color: var(--cyan);
+    }
+
+    /* Images */
+    .marked-image {
+      width: 100%;
+    }
+
+    /***********************************
+          HIGHLIGHTING ASSIGNMENTS
+      ************************************/
+    .hljs {
+      display: block;
+      overflow-x: auto;
+      padding: 0.5em;
+    }
+
+    .hljs-built_in,
+    .hljs-selector-tag,
+    .hljs-section,
+    .hljs-link {
+      color: var(--cyan);
+    }
+
+    .hljs-keyword {
+      color: var(--pink);
+    }
+
+    .hljs,
+    .hljs-subst {
+      color: var(--white);
+    }
+
+    .hljs-title,
+    .hljs-attr,
+    .hljs-meta-keyword {
+      font-style: italic;
+      color: var(--green);
+    }
+
+    .hljs-string,
+    .hljs-meta,
+    .hljs-name,
+    .hljs-type,
+    .hljs-symbol,
+    .hljs-bullet,
+    .hljs-addition,
+    .hljs-variable,
+    .hljs-template-tag,
+    .hljs-template-variable {
+      color: var(--yellow);
+    }
+
+    .hljs-comment,
+    .hljs-quote,
+    .hljs-deletion {
+      color: var(--blue);
+    }
+
+    .hljs-keyword,
+    .hljs-selector-tag,
+    .hljs-literal,
+    .hljs-title,
+    .hljs-section,
+    .hljs-doctag,
+    .hljs-type,
+    .hljs-name,
+    .hljs-strong {
+      font-weight: bold;
+    }
+
+    .hljs-literal,
+    .hljs-number {
+      color: var(--purple);
+    }
+
+    .hljs-emphasis {
+      font-style: italic;
+    }
+  `;
+
+  updated() {
+    renderMarkdown(this.markdown, this.renderRoot.querySelector("#container"));
+  }
+
+  render() {
+    return html`<div id="container"></div>`;
+  }
+}
+
+customElements.define("x-markdown", Markdown);

@@ -1,5 +1,21 @@
 # twiggsite
 
+## Dev
+
+Serve `index.html` with a dev server capable of handling single-page apps, such as [`web-dev-server`](https://modern-web.dev/docs/dev-server/overview/).
+
+Install `web-dev-server`:
+
+```sh
+npm install -g @web/dev-server
+```
+
+Serve `index.html` as the route fallback:
+
+```sh
+wds --watch --app-index index.html
+```
+
 ## Tools
 
 - [Lit](https://lit.dev/) for webcomponents

@@ -4,6 +4,7 @@ import { LitElement, html, css, styleMap } from "../libs/lit.js";
 import { themes } from "../assets/themes.js";
 
 import "../common/social-icon.js";
+import { menu } from "../assets/icons.js";
 import socials from "../../content/socials.js";
 
 export class Home extends LitElement {
@@ -23,34 +24,50 @@ export class Home extends LitElement {
         top: 0;
         color: var(--white);
       }
+      #nav::before {
+        content: "";
+        background-color: var(--black);
+        filter: brightness(0.8);
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: -1;
+      }
       #navbar {
         display: flex;
         justify-content: space-between;
-        height: 2rem;
+        height: 3rem;
         align-items: center;
       }
       #navbar a:link {
         text-decoration: none;
       }
       #nav-icon {
-        background: var(--blue);
         display: inline-block;
         height: 100%;
         aspect-ratio: 1/1;
+        display: flex;
         cursor: var(--cursor-pointer), pointer;
+        justify-content: center;
       }
-      #nav-icon:hover {
-        background-color: var(--purple);
+      #nav-icon svg {
+        margin: 0.5rem;
+      }
+      #nav-icon path {
+        fill: var(--white);
+      }
+      #nav-icon:hover path {
+        fill: var(--purple);
       }
       #name-header {
-        font-size: 1.2rem;
+        font-size: 1.5rem;
         text-decoration: none;
         font-weight: 800;
         font-style: italic;
         cursor: var(--cursor-pointer), pointer;
         user-select: none;
         width: fit-content;
-        padding-left: 0.3rem;
+        padding-left: 1rem;
         color: var(--white);
       }
       #name-header:hover {
@@ -89,7 +106,7 @@ export class Home extends LitElement {
         position: relative;
         z-index: 0;
         display: flex;
-        margin: 0.5rem 1rem;
+        margin: 1rem;
         justify-content: center;
       }
 
@@ -124,6 +141,7 @@ export class Home extends LitElement {
         #nav {
           display: flex;
           justify-content: space-between;
+          align-items: center;
         }
       }
     `;
@@ -144,9 +162,15 @@ export class Home extends LitElement {
           <a href="/"
             ><div id="name-header">hannah&nbsp;twigg&#8209;smith</div>
           </a>
-          <div id="nav-icon" @click=${() => (this.nav = !this.nav)}></div>
+          <div
+            id="nav-icon"
+            @click=${() => (this.nav = !this.nav)}>
+            ${menu}
+          </div>
         </div>
-        <div id="nav-content" style="display:${this.nav ? "flex" : "none"}">
+        <div
+          id="nav-content"
+          style="display:${this.nav ? "flex" : "none"}">
           <div id="links">
             <a href="/about"><span class="link">about</span></a>
             /
@@ -160,7 +184,9 @@ export class Home extends LitElement {
         </div>
       </div>
       <!-- Everything outside of the nav -->
-      <div id="content" style=${styleMap(themes[this.theme])}>
+      <div
+        id="content"
+        style=${styleMap(themes[this.theme])}>
         <div id="content-container">
           <slot></slot>
         </div>

@@ -9,7 +9,7 @@ export class Markdown extends LitElement {
   static styles = css`
     /***********************************
           BLOCK STYLES
-      ************************************/
+    ************************************/
     /* Heading 1 */
     .marked-h1 {
       color: var(--orange);

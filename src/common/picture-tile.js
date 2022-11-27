@@ -1,10 +1,6 @@
 import { LitElement, html, css } from "../libs/lit.js";
 
-export class ProjectTile extends LitElement {
-  static properties = {
-    project: {},
-  };
-
+export class PictureTile extends LitElement {
   static get styles() {
     return css`
       #teaser {
@@ -16,6 +12,9 @@ export class ProjectTile extends LitElement {
       #root {
         border: 1px solid var(--black);
       }
+      a {
+        text-decoration: none;
+      }
       :host {
         position: relative;
       }
@@ -26,6 +25,16 @@ export class ProjectTile extends LitElement {
         inset: 1px;
         transform: translate(0, 0);
         background-color: var(--hovercolor);
+        filter: brightness(0.8);
+      }
+      #tile-title {
+        background-color: var(--hovercolor);
+        color: var(--black);
+        padding: 0.4rem 0.7rem;
+        font-weight: 800;
+        outline: 1px solid var(--black);
+        white-space: nowrap;
+        overflow: hidden;
       }
       :host(:focus-within)::before,
       :host(:hover)::before {
@@ -45,14 +54,14 @@ export class ProjectTile extends LitElement {
   render() {
     return html`
       <div id="root">
-        <a href=${`projects/${this.project}`}>
+        <a href=${`${this.path}`}>
           <img
             id="teaser"
-            src=${`../content/projects/${this.project}/teaser.jpg`}
-          />
+            src=${this.image} />
+          <div id="tile-title">${this.title}</div>
         </a>
       </div>
     `;
   }
 }
-customElements.define("project-tile", ProjectTile);
+customElements.define("picture-tile", PictureTile);

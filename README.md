@@ -1,4 +1,6 @@
-# twiggsite
+# hannah's website
+
+Congrats, you found the repository containing the code for my personal website. See it live at [twigg.gg](https://twigg.gg)
 
 ## Dev
 

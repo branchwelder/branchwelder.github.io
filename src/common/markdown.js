@@ -69,7 +69,11 @@ export class Markdown extends LitElement {
 
     /* Paragraph */
     .marked-paragraph {
-      font-weight: 400;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+        Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+      font-size: 1.2rem;
+      font-weight: 300;
+      line-height: 1.5;
     }
 
     /***********************************
@@ -83,13 +87,13 @@ export class Markdown extends LitElement {
 
     /* Italic */
     .marked-emph {
-      color: var(--cyan);
+      color: var(--yellow);
       font-style: italic;
     }
 
     /* Both bold and italic */
     .marked-strong .marked-emph {
-      color: var(--yellow);
+      color: var(--pink);
     }
 
     /* Italic */
@@ -121,7 +125,7 @@ export class Markdown extends LitElement {
 
     /* Links */
     .marked-link:link {
-      color: var(--blue);
+      color: var(--cyan);
     }
     .marked-link:visited {
       color: var(--purple);
@@ -130,7 +134,7 @@ export class Markdown extends LitElement {
       color: var(--orange);
     }
     .marked-link:active {
-      color: var(--cyan);
+      color: var(--yellow);
     }
 
     /* Images */

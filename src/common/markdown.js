@@ -12,7 +12,8 @@ export class Markdown extends LitElement {
     ************************************/
     /* Heading 1 */
     .marked-h1 {
-      color: var(--orange);
+      text-align: center;
+      font-weight: 999;
     }
 
     /* Heading 2 */
@@ -50,12 +51,13 @@ export class Markdown extends LitElement {
       content: attr(language);
       background-color: var(--black);
       filter: brightness(1.2);
-      width: 100%;
-      height: 100%;
+      width: calc(100% - 0.4rem);
+      padding-right: 0.4rem;
+      padding-top: 0.2rem;
+      height: calc(100% - 0.2rem);
       position: absolute;
       z-index: -1;
       border-radius: 0.5rem;
-      padding: 0.2rem 0.4rem;
       color: var(--pink);
       font-weight: 700;
       font-size: 0.8rem;
@@ -65,14 +67,9 @@ export class Markdown extends LitElement {
       border-right: 1px solid var(--green);
     }
 
-    /* .marked-codeblock:hover::before {
-        border-top: 1px solid var(--green);
-        border-bottom: 1px solid var(--pink);
-      } */
-
     /* Paragraph */
     .marked-paragraph {
-      font-weight: 300;
+      font-weight: 400;
     }
 
     /***********************************

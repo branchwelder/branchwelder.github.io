@@ -32,7 +32,7 @@ export class ProjectGrid extends LitElement {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
         gap: 1rem;
-        z-index: 0;
+        margin: 1rem;
       }
     `;
   }
@@ -49,8 +49,7 @@ export class ProjectGrid extends LitElement {
             .project=${project}
             style="--hovercolor: var(--${colors[
               Math.floor(Math.random() * colors.length)
-            ]})"
-          ></project-tile>`
+            ]})"></project-tile>`
       )}
     </div>`;
   }

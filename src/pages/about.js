@@ -9,8 +9,15 @@ export class About extends LitElement {
   };
 
   static styles = css`
+    :host {
+      width: 100%;
+      display: block;
+      display: flex;
+      justify-content: center;
+    }
     #container {
       max-width: 30rem;
+      margin: 0 1rem;
     }
   `;
 

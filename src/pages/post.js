@@ -9,8 +9,28 @@ export class Post extends LitElement {
   };
 
   static styles = css`
+    :host {
+      width: 100%;
+      display: block;
+      display: flex;
+      justify-content: center;
+    }
+
     #container {
-      max-width: 50rem;
+      margin: 0 1rem;
+    }
+
+    /* Mobile mode */
+    @media only screen and (max-width: 767px) {
+      #container {
+        width: 100%;
+      }
+    }
+    @media only screen and (min-width: 767px) {
+      #container {
+        min-width: 45rem;
+        max-width: 50rem;
+      }
     }
   `;
 

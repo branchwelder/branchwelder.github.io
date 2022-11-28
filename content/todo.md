@@ -1,5 +1,10 @@
 # TODO
 
+- where to best host static assets?
+- project template folder
+- script to generate new project folder
+- script to downsize images
+
 ## project backlog
 
 - plasma themes, icons

@@ -18,7 +18,6 @@ export class Home extends LitElement {
     theme: {},
     location: {},
     nav: {},
-    settings: {},
   };
 
   static get styles() {
@@ -33,7 +32,7 @@ export class Home extends LitElement {
         z-index: 100;
         top: 0;
         color: var(--white);
-        box-shadow: black 0 0 10px 0px;
+        box-shadow: black 0 0 0.5rem 0px;
         margin-bottom: 1rem;
       }
 
@@ -68,19 +67,23 @@ export class Home extends LitElement {
         transform: rotate(0);
         margin-right: 0.5rem;
       }
-
+      #nav-buttons {
+        display: flex;
+      }
       #nav-menu svg,
-      #nav-settings svg {
+      #settings-icon svg {
         margin: 0.5rem;
       }
       #nav-menu path,
-      #nav-settings path {
+      #settings-icon path {
         fill: var(--white);
       }
       #nav-menu:hover path,
-      #nav-settings:hover path {
+      #settings-icon:hover path {
         fill: var(--purple);
       }
+
+      /* NAME HEADER */
       #name-header {
         font-size: 1.5rem;
         text-decoration: none;
@@ -96,6 +99,7 @@ export class Home extends LitElement {
         color: var(--yellow);
       }
 
+      /* NAVIGATION LINKS */
       #socials,
       #links {
         display: flex;
@@ -124,14 +128,48 @@ export class Home extends LitElement {
         text-decoration: underline;
       }
 
-      #settings {
-        position: relative;
-        z-index: 1000;
-        overflow: auto;
-        background-color: var(--black);
-        padding: 0.5rem;
+      /* MENU BUTTON (SHOWN IN MOBILE MODE) */
+      #menu-button {
+        display: none;
       }
 
+      #menu-button:checked + #nav-menu {
+        transform: rotate(90deg);
+      }
+
+      #menu-button:checked + #nav-menu path {
+        fill: var(--yellow);
+      }
+
+      /* SETTINGS TOGGLE */
+
+      #settings-icon {
+        width: 2.5rem;
+        display: flex;
+        align-items: center;
+        transition: all 0.3s ease;
+        transform: rotate(0);
+      }
+
+      #settings-toggle {
+        display: none;
+      }
+
+      #settings-toggle:checked ~ #settings-icon {
+        transform: rotate(90deg);
+      }
+
+      #settings-toggle:checked ~ #settings-icon path {
+        fill: var(--yellow);
+      }
+
+      /* SETTINGS PANE */
+      #settings {
+        padding: 0.5rem;
+        position: absolute;
+        z-index: -10;
+        box-shadow: black 0 0 0 0px;
+      }
       #settings::before {
         content: "";
         background-color: var(--black);
@@ -142,6 +180,24 @@ export class Home extends LitElement {
         z-index: -1;
         left: 0;
         top: 0;
+      }
+      .controlButton {
+        background-color: var(--black);
+        cursor: pointer;
+        border: 1px solid var(--buttonColor);
+        color: var(--buttonColor);
+      }
+      .controlButton:hover {
+        background-color: var(--buttonColor);
+        color: var(--black);
+      }
+      .controlButtonContainer {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .controlPanelLabel {
+        font-weight: bold;
+        margin-bottom: 0.5rem;
       }
 
       /* Mobile mode */
@@ -156,7 +212,19 @@ export class Home extends LitElement {
           flex-direction: column;
           align-items: center;
         }
+        #settings {
+          transition: top 250ms ease, box-shadow 250ms;
+          top: 0;
+          left: 0;
+          width: calc(100% - 1rem);
+          padding-top: 0;
+        }
+        #settings-toggle:checked ~ #settings {
+          top: 100%;
+          box-shadow: black 0 0 0.5rem 0px;
+        }
       }
+
       /* Desktop mode */
       @media only screen and (min-width: 767px) {
         #nav-content {
@@ -177,59 +245,15 @@ export class Home extends LitElement {
           gap: 1.5rem;
         }
         #settings {
-          position: absolute;
-          top: 3rem;
-          z-index: 100;
-          box-shadow: black 0px 5px 5px;
+          transition: right 250ms ease, box-shadow 250ms;
+          width: 15rem;
+          top: calc(100% + 1.5rem);
+          right: -16rem;
         }
-      }
-      .controlButton {
-        background-color: var(--black);
-        cursor: pointer;
-        border: 1px solid var(--buttonColor);
-        color: var(--buttonColor);
-      }
-
-      .controlButton:hover {
-        background-color: var(--buttonColor);
-        color: var(--black);
-      }
-
-      #nav-buttons {
-        display: flex;
-      }
-
-      .controlButtonContainer {
-        display: flex;
-        flex-wrap: wrap;
-      }
-
-      .controlPanelLabel {
-        font-weight: bold;
-        margin-bottom: 0.5rem;
-      }
-
-      #nav-settings {
-        width: 2.5rem;
-        display: flex;
-        align-items: center;
-        transition: all 0.3s ease;
-        transform: rotate(0);
-      }
-
-      #settings-button,
-      #menu-button {
-        display: none;
-      }
-
-      #settings-button:checked + #nav-settings,
-      #menu-button:checked + #nav-menu {
-        transform: rotate(90deg);
-      }
-
-      #settings-button:checked + #nav-settings path,
-      #menu-button:checked + #nav-menu path {
-        fill: var(--yellow);
+        #settings-toggle:checked ~ #settings {
+          right: 0;
+          box-shadow: black 0 0 0.5rem 0px;
+        }
       }
     `;
   }
@@ -250,11 +274,6 @@ export class Home extends LitElement {
           <a href="/"
             ><div id="name-header">hannah&nbsp;twigg&#8209;smith</div>
           </a>
-          <!-- <div
-            id="nav-menu"
-            @click=${() => (this.nav = !this.nav)}>
-            ${menu}
-          </div> -->
           <label for="menu-button">
             <input
               type="checkbox"
@@ -281,31 +300,29 @@ export class Home extends LitElement {
                 (social) => html`<social-icon .social=${social}></social-icon>`
               )}
             </div>
-            <label for="settings-button">
+
+            <label for="settings-toggle">
               <input
+                name="settings-toggle"
                 type="checkbox"
-                id="settings-button" />
-              <div
-                id="nav-settings"
-                @click=${() => (this.settings = !this.settings)}>
-                ${gear}
+                id="settings-toggle" />
+              <div id="settings-icon">${gear}</div>
+
+              <div id="settings">
+                <div id="settingsContainer">
+                  <div class="controlPanelLabel">themes</div>
+                  <div class="controlButtonContainer">
+                    ${repeat(getAvailableThemes(), (rule) => {
+                      const theme_name = rule.selectorText.slice(1);
+                      return controlButton(theme_name, "blue", (e) => {
+                        changeTheme(this.theme, theme_name);
+                        this.theme = theme_name;
+                      });
+                    })}
+                  </div>
+                </div>
               </div>
             </label>
-          </div>
-
-          <div
-            id="settings"
-            style="display:${this.settings ? "block" : "none"}">
-            <div class="controlPanelLabel">themes</div>
-            <div class="controlButtonContainer">
-              ${repeat(getAvailableThemes(), (rule) => {
-                const theme_name = rule.selectorText.slice(1);
-                return controlButton(theme_name, "blue", (e) => {
-                  changeTheme(this.theme, theme_name);
-                  this.theme = theme_name;
-                });
-              })}
-            </div>
           </div>
         </div>
       </div>

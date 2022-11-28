@@ -27,14 +27,20 @@ export class PictureTile extends LitElement {
         background-color: var(--hovercolor);
         filter: brightness(0.8);
       }
-      #tile-title {
+      #title-container {
         background-color: var(--hovercolor);
         color: var(--black);
-        padding: 0.4rem 0.7rem;
         font-weight: 800;
         outline: 1px solid var(--black);
         white-space: nowrap;
         overflow: hidden;
+        display: flex;
+        justify-content: center;
+      }
+      #tile-title {
+        margin: 0.4rem 0.7rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
       :host(:focus-within)::before,
       :host(:hover)::before {
@@ -48,6 +54,20 @@ export class PictureTile extends LitElement {
       :host::before {
         transition: transform 0.05s ease-out;
       }
+
+      /* Mobile mode */
+      @media only screen and (max-width: 767px) {
+        #tile-title {
+          margin: 0.3rem 0.5rem;
+          font-size: 0.8rem;
+        }
+      }
+      /* Desktop mode */
+      @media only screen and (min-width: 767px) {
+        #tile-title {
+          margin: 0.4rem 0.7rem;
+        }
+      }
     `;
   }
 
@@ -58,7 +78,9 @@ export class PictureTile extends LitElement {
           <img
             id="teaser"
             src=${this.image} />
-          <div id="tile-title">${this.title}</div>
+          <div id="title-container">
+            <div id="tile-title">${this.title}</div>
+          </div>
         </a>
       </div>
     `;

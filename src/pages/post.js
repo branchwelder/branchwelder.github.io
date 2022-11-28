@@ -16,9 +16,9 @@ export class Post extends LitElement {
       justify-content: center;
     }
 
-    #container {
+    /* #container {
       margin: 0 1rem;
-    }
+    } */
 
     /* Mobile mode */
     @media only screen and (max-width: 767px) {

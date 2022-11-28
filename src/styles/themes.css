@@ -11,19 +11,6 @@
   --purple: #da70d6;
 }
 
-.contrast-light {
-  --white: #000000;
-  --black: #ffffff;
-  --pink: #ff1493;
-  --red: #ff0000;
-  --orange: #da9921;
-  --yellow: #ffaa00;
-  --green: #00b700;
-  --cyan: #00c2c2;
-  --blue: #00bfff;
-  --purple: #da70d6;
-}
-
 .nord {
   --black: #2e3440;
   --white: #eceff4;
@@ -40,19 +27,6 @@
 .solarized-dark {
   --black: #002b36;
   --white: #fdf6e3;
-  --pink: #d33682;
-  --red: #dc322f;
-  --orange: #cb4b16;
-  --yellow: #b58900;
-  --green: #859900;
-  --cyan: #2aa198;
-  --blue: #268bd2;
-  --purple: #6c71c4;
-}
-
-.solarized-light {
-  --white: #002b36;
-  --black: #fdf6e3;
   --pink: #d33682;
   --red: #dc322f;
   --orange: #cb4b16;

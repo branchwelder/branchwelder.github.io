@@ -33,7 +33,6 @@ export class Home extends LitElement {
         top: 0;
         color: var(--white);
         box-shadow: black 0 0 0.5rem 0px;
-        margin-bottom: 1rem;
       }
 
       #nav::before {
@@ -260,7 +259,7 @@ export class Home extends LitElement {
 
   constructor() {
     super();
-    this.theme = "blue-hour";
+    this.theme = "solarized-dark";
     this.location = router.location;
     this.nav = false;
     this.settings = false;

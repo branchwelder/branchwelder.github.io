@@ -32,11 +32,24 @@ export class ProjectGrid extends LitElement {
       #grid-container {
         max-width: 60rem;
       }
-      #project-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
-        gap: 1rem;
-        margin: 0 1rem;
+
+      /* Mobile mode */
+      @media only screen and (max-width: 767px) {
+        #project-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+          gap: 0.5rem;
+          margin: 0.5rem;
+        }
+      }
+      /* Desktop mode */
+      @media only screen and (min-width: 767px) {
+        #project-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+          gap: 1rem;
+          margin: 1rem;
+        }
       }
     `;
   }

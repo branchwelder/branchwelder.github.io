@@ -7,6 +7,9 @@ export class Markdown extends LitElement {
   };
 
   static styles = css`
+    #container {
+      margin: 1rem 1rem 10rem 1rem;
+    }
     /***********************************
           BLOCK STYLES
     ************************************/
@@ -71,7 +74,6 @@ export class Markdown extends LitElement {
     .marked-paragraph {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
         Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-      font-size: 1.2rem;
       font-weight: 300;
       line-height: 1.5;
     }

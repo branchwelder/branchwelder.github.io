@@ -13,16 +13,16 @@ export default [
   },
   {
     title: "CNC Watercolor",
-    image: "/watercolor/teaser.jpg",
+    image: "/watercolor/hero.jpg",
     path: "/watercolor",
     color: "blue",
   },
-  {
-    title: "CNC Automata",
-    image: "/cnc_automata/teaser.jpg",
-    path: "/cnc_automata",
-    color: "pink",
-  },
+  // {
+  //   title: "CNC Automata",
+  //   image: "/cnc_automata/teaser.jpg",
+  //   path: "/cnc_automata",
+  //   color: "pink",
+  // },
   {
     title: "Playdate",
     image: "/playdate/teaser.jpg",
@@ -43,7 +43,7 @@ export default [
   },
   {
     title: "Slice-It",
-    image: "/slice-it/teaser.jpg",
+    image: "/slice-it/moose.jpg",
     path: "/slice-it",
     color: "cyan",
   },

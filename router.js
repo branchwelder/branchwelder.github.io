@@ -1,16 +1,16 @@
 import { Router } from "https://unpkg.com/@vaadin/router";
 
 // Import home and error pages by default
-import "./src/pages/home.js";
-import "./src/pages/projects.js";
+import "./src/pages/nav.js";
+import "./src/pages/homePage.js";
 import "./src/pages/ohno.js";
 
 const routes = [
   {
     path: "/",
-    component: "portfolio-home",
+    component: "portfolio-nav",
     children: [
-      { path: "/", component: "project-grid" },
+      { path: "/", component: "home-page" },
       {
         path: "/about",
         component: "twigg-about",

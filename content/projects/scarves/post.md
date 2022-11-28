@@ -1,3 +1,3 @@
 # Automata scarves!
 
-yolo swag
+![scarves](/content/projects/scarves/teaser.jpg)

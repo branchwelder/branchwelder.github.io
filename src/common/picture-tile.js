@@ -8,9 +8,11 @@ export class PictureTile extends LitElement {
         display: block;
         object-fit: cover;
         aspect-ratio: 1;
+        cursor: var(--cursor-pointer), pointer !important;
       }
       #root {
         border: 1px solid var(--black);
+        cursor: var(--cursor-pointer), pointer !important;
       }
       a {
         text-decoration: none;
@@ -26,6 +28,7 @@ export class PictureTile extends LitElement {
         transform: translate(0, 0);
         background-color: var(--hovercolor);
         filter: brightness(0.8);
+        cursor: var(--cursor-pointer), pointer !important;
       }
       #title-container {
         background-color: var(--hovercolor);
@@ -36,11 +39,13 @@ export class PictureTile extends LitElement {
         overflow: hidden;
         display: flex;
         justify-content: center;
+        cursor: var(--cursor-pointer), pointer !important;
       }
       #tile-title {
         margin: 0.4rem 0.7rem;
         overflow: hidden;
         text-overflow: ellipsis;
+        cursor: var(--cursor-pointer), pointer !important;
       }
       :host(:focus-within)::before,
       :host(:hover)::before {
@@ -48,7 +53,6 @@ export class PictureTile extends LitElement {
       }
       #root:hover {
         transform: translate(calc(3rem * 0.125), calc(3rem * -0.125));
-        cursor: var(--cursor-pointer), pointer;
       }
       #root,
       :host::before {

@@ -15,7 +15,6 @@ export class Markdown extends LitElement {
     ************************************/
     /* Heading 1 */
     .marked-h1 {
-      text-align: center;
       font-weight: 999;
     }
 
@@ -128,6 +127,7 @@ export class Markdown extends LitElement {
     /* Links */
     .marked-link:link {
       color: var(--cyan);
+      cursor: var(--cursor-pointer), pointer !important;
     }
     .marked-link:visited {
       color: var(--purple);

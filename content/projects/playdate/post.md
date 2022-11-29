@@ -1,8 +1,11 @@
 # Squares: A little art toy for the playdate
 
+I
 I made a little square game for the [playdate](https://play.date)!
 
 I posted it on instagram and it got picked up by _The Algorithm_, receiving quite a response.
+
+Here is the source code in full, which is also [on Github](https://github.com/branchwelder/played-eight).
 
 ```lua
 import "CoreLibs/object"

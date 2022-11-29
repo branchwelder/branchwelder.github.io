@@ -1,4 +1,4 @@
-import { LitElement, html, css } from "../libs/lit.js";
+import { LitElement, html, css } from "/src/libs/lit.js";
 
 export class SocialIcon extends LitElement {
   static properties = {
@@ -8,31 +8,35 @@ export class SocialIcon extends LitElement {
   static get styles() {
     return css`
       #tag {
-        padding: 0.2rem;
+        padding: 20%;
         aspect-ratio: 1 / 1;
-        height: 100%;
-        align-items: center;
         cursor: var(--cursor-pointer), pointer !important;
         display: flex;
         justify-content: center;
+        background-color: var(--hover);
+        border: 1px solid var(--black);
       }
+
       path {
-        fill: var(--hover);
+        fill: var(--black);
       }
-      svg {
-        width: 1.5rem;
+      :host(:focus-within) * {
+        outline: none;
       }
-      a {
-        display: contents;
-      }
-      a:hover {
-        cursor: var(--cursor-pointer), pointer !important;
+      :host(:focus-within) #tag {
+        outline: 10px solid var(--black);
+        outline-offset: -10px;
       }
       #tag:hover {
-        background-color: var(--hover);
+        background-color: var(--black);
+        outline: 1px solid var(--hover);
+        outline-offset: -10px;
       }
       #tag:hover path {
-        fill: var(--black);
+        fill: var(--hover);
+      }
+      #tag:active {
+        filter: brightness(1.5);
       }
     `;
   }
@@ -46,9 +50,10 @@ export class SocialIcon extends LitElement {
     return html`<a
       href=${this.social.url}
       target="_blank"
-      rel="noreferrer noopener"
-    >
-      <div id="tag" style="--hover: var(--${this.social.color})">
+      rel="noreferrer noopener">
+      <div
+        id="tag"
+        style="--hover: var(--${this.social.color})">
         ${this.social.icon}
       </div></a
     >`;

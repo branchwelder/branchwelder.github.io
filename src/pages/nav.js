@@ -2,9 +2,7 @@ import { router } from "../../router.js";
 import { LitElement, html, css, repeat } from "../libs/lit.js";
 import { getAvailableThemes, changeTheme } from "./themer.js";
 
-import "../common/social-icon.js";
 import { menu, gear } from "../assets/icons.js";
-import socials from "../../content/socials.js";
 
 const controlButton = (buttonText, buttonColor, buttonAction) => html`<button
   style="--buttonColor: var(--${buttonColor})"
@@ -100,7 +98,6 @@ export class Nav extends LitElement {
       }
 
       /* NAVIGATION LINKS */
-      #socials,
       #links {
         display: flex;
         align-items: center;
@@ -266,13 +263,12 @@ export class Nav extends LitElement {
     this.theme = "solarized-dark";
     this.location = router.location;
     this.nav = false;
-    this.settings = false;
   }
 
   render() {
     return html`
       <!-- The navigation bar -->
-      <div id="nav">
+      <!-- <div id="nav">
         <div id="nav-main">
           <a href="/"
             ><div id="name-header">hannah&nbsp;twigg&#8209;smith</div>
@@ -298,11 +294,6 @@ export class Nav extends LitElement {
               /
               <a href="/cv"><span class="link">cv</span></a>
             </div>
-            <div id="socials">
-              ${socials.map(
-                (social) => html`<social-icon .social=${social}></social-icon>`
-              )}
-            </div>
 
             <label for="settings-toggle">
               <input
@@ -316,19 +307,19 @@ export class Nav extends LitElement {
                   <div class="controlPanelLabel">themes</div>
                   <div class="controlButtonContainer">
                     ${repeat(getAvailableThemes(), (rule) => {
-                      const theme_name = rule.selectorText.slice(1);
-                      return controlButton(theme_name, "blue", (e) => {
-                        changeTheme(this.theme, theme_name);
-                        this.theme = theme_name;
-                      });
-                    })}
+        const theme_name = rule.selectorText.slice(1);
+        return controlButton(theme_name, "blue", (e) => {
+          changeTheme(this.theme, theme_name);
+          this.theme = theme_name;
+        });
+      })}
                   </div>
                 </div>
               </div>
             </label>
           </div>
         </div>
-      </div>
+      </div> -->
       <!-- Everything outside of the nav -->
       <div id="content">
         <slot></slot>

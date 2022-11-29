@@ -54,7 +54,7 @@ export default {
     },
     {
       title: "Embroidered Audio",
-      image: "/embryoid/teaser.jpg",
+      image: "/embryoid/hero.jpg",
       path: "/embryoid",
       color: "purple",
     },

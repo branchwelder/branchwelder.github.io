@@ -3,7 +3,7 @@ export default {
     {
       title: "About",
       path: "/about",
-      image: "/content/about/portrait.jpg",
+      image: "/content/about/images/portrait.jpg",
       color: "pink",
     },
     {

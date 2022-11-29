@@ -42,6 +42,7 @@ export class Home extends LitElement {
       }
       #about {
         margin-top: unset;
+        user-select: none;
       }
       #socials {
         display: grid;
@@ -82,7 +83,7 @@ export class Home extends LitElement {
 
         #layout-container {
           max-width: 60rem;
-          margin: 4rem 3rem 10rem 3rem;
+          margin: 4rem 4rem 10rem 4rem;
         }
       }
     `;
@@ -98,7 +99,7 @@ export class Home extends LitElement {
         <div
           class="sectionTitle"
           id="about">
-          Hannah&nbsp;Twigg-Smith
+          Hannah&nbsp;Twigg&#8209;Smith
         </div>
         <div class="project-grid">
           ${layout.about.map(

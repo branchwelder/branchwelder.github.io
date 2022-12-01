@@ -9,10 +9,11 @@ How can we build software that supports many kinds of fabrication workflows, eve
 How can we minimize the amount of new code we write by taking advantage of existing libraries, design tools, path planning algorithms, machine interfaces, and visualizations?
 
 **Dynamic Toolchains** are reconfigurable programs for digital fabrication where modules are connected in a dataflow environment.
-A core goal of this project is _extensibility_: how can we easily integrate existing and new tools into our toolchains?
-How can we support multiple common programming languages (and by extension their associated libraries)?
+A core goal of this project is extensibility: _how can we easily integrate existing and new tools into our toolchains?_
 We provide a development framework for contributing new modules, which resemble miniature full-stack web applications written in Python and JavaScript.
 The environment handles communication between modules, leaving their actual implementation as open as possible.
+
+<!-- How can we support multiple common programming languages (and by extension their associated libraries)? -->
 
 I have built a number of example modules and toolchains that support different digital fabrication workflows, including plotted maps, machine knit cellular automata, and CNC milling.
 Because modules are event-driven, we can also build _interactive_ machine control interfaces where machine instructions are generated based on user input.

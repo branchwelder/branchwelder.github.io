@@ -2,25 +2,32 @@
 
 # Dynamic Toolchains
 
-**Dynamic Toolchains** are reconfigurable programs for digital fabrication.
-Software for fabrication includes many existing tools, including design and visualization interfaces, programming libraries, file formats, machine languages, and more.
-My goal with this project is to make integrating _existing and new tools_ as easy as possible.
-We accomplish this by leaving module implementation as open as possible while providing a dataflow-style communication interface between them.
+CAD/CAM software for digital fabrication provides a way of converting between different data formats, such as a slicer converting an STL model to G-code.
+Traditionally, these programs are built to support a particular workflow.
+For example, slicers are designed to enable layer-by-layer 3D printing.
+How can we build software that supports many kinds of fabrication workflows, even ones we haven't thought of yet?
+How can we minimize the amount of new code we write by taking advantage of existing libraries, design tools, path planning algorithms, machine interfaces, and visualizations?
 
-Modules are full stack web applications, and can incorporate practically any Python and JavaScript libaries.
-As the project evolves, I am looking to bring in outside collaborators and practitioners.
-My eventual goal is to build a module- and toolchain-sharing platform, but there are a number of things to figure out on the development side before that's possible.
-If you're interested in getting involved, [send me a note!](mailto:hannah@twigg.gg)
+**Dynamic Toolchains** are reconfigurable programs for digital fabrication where modules are connected in a dataflow environment.
+A core goal of this project is _extensibility_: how can we easily integrate existing and new tools into our toolchains?
+How can we support multiple common programming languages (and by extension their associated libraries)?
+We provide a development framework for contributing new modules, which resemble miniature full-stack web applications written in Python and JavaScript.
+The environment handles communication between modules, leaving their actual implementation as open as possible.
 
-## links
+I have built a number of example modules and toolchains that support different digital fabrication workflows, including plotted maps, machine knit cellular automata, and CNC milling.
+Because modules are event-driven, we can also build _interactive_ machine control interfaces where machine instructions are generated based on user input.
+I have prototyped one such interface [for exploring brushstroke patterns for watercolor painting](/projects/watercolor).
 
-I have demonstrated the system at two academic conferences (SCF and UIST), and a full paper is currently under review.
+I have demonstrated Dynamic Toolchains at two academic conferences (SCF and UIST), and a full paper is currently under review.
 Demo abstracts (which are quite similar) are available here: [SCF 2022](/papers/dynamic_toolchains_scf) and [UIST 2022](/papers/dynamic_toolchains_uist).
 Source code for the project is available in a [public Github repository](https://github.com/machineagency/planager).
+As the project evolves, I am looking to bring in outside collaborators and practitioners.
+My eventual goal is to build a module- and toolchain-sharing platform, but I'm only one person!
+If you're interested in getting involved, [send me a note!](mailto:hannah@twigg.gg)
 
 ## example toolchains
 
-I have built a number of example modules and toolchains for niche digital fabrication workflows, including interactive watercolor painting, map plotting, machine knitting, and CNC milling. These are a few of my favorites.
+Here are some toolchains I've built in this system.
 
 ### automata knits
 

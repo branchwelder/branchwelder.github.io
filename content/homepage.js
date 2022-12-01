@@ -16,7 +16,7 @@ export default {
   research: [
     {
       title: "Dynamic Toolchains",
-      image: "/dynamic_toolchains/scarf_toolchain.png",
+      image: "/dynamic_toolchains/images/scarf_toolchain.png",
       path: "/dynamic_toolchains",
       color: "purple",
     },

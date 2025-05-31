@@ -1,0 +1,17 @@
+{
+  "title": "BIMP",
+  "longTitle": "BIMP: Bitmap Image Manipulation Program",
+  "thumbnailSrc": "square.png",
+  "headerSrc": "header.png",
+  "description": "BIMP (Bitmap Image Manipulation Program) is a weird little editor for drawing bitmap images and manipulating them with JavaScript.",
+  "links": [
+    {
+      "text": "Github",
+      "url": "https://github.com/branchwelder/bimp"
+    },
+    {
+      "text": "Live site",
+      "url": "https://twigg.gg/bimp/"
+    }
+  ]
+}

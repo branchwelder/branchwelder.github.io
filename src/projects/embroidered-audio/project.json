@@ -1,0 +1,12 @@
+{
+  "title": "Embroidered Audio",
+  "thumbnailSrc": "square.jpg",
+  "headerSrc": "header.jpg",
+  "description": "A brief exploration of embroidering audio waveforms.",
+  "links": [
+    {
+      "text": "blog post",
+      "url": "https://www.dx-softlab.com/research/2022/3/20/stitching-code-by-hannah-twigg-smith"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "title": "Dynamic Toolchains",
+  "thumbnailSrc": "square.png",
+  "headerSrc": "teaser.png",
+  "description": "Dynamic Toolchains is an extensible event-driven dataflow environment I built early in my PhD. The project has gone through a few iterations, with the original goal being to make it easy to use off-the-shelf libraries together for interactive digital fabrication. While I've largely moved on from the project, it has been forked and used to create a browser-based implementation of CoilCAM, a toolpath design system for clay 3D printing.",
+  "links": [
+    {
+      "text": "Github",
+      "url": "https://github.com/machineagency/toolchains"
+    },
+    {
+      "text": "CoilCAM Fork",
+      "url": "https://sambourgault.github.io/coilCAM-docs/docs/quick-start/toolchains/"
+    },
+    {
+      "text": "Project Page",
+      "url": "https://machineagency.github.io/projects/dynamic-toolchains/"
+    },
+    {
+      "text": "Paper",
+      "url": "https://dl.acm.org/doi/pdf/10.1145/3586183.3606802"
+    },
+    {
+      "text": "ACM Digital Library",
+      "url": "https://dl.acm.org/doi/abs/10.1145/3586183.3606802"
+    },
+    {
+      "text": "Live site",
+      "url": "https://machineagency.github.io/toolchains/"
+    }
+  ]
+}

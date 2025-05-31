@@ -1,0 +1,16 @@
+{
+  "title": "P5 Playground",
+  "thumbnailSrc": "square.png",
+  "headerSrc": "header.png",
+  "description": "This is a little javascript playground meant for quickly iterating on P5.js sketches.",
+  "links": [
+    {
+      "text": "Github",
+      "url": "https://github.com/branchwelder/playground"
+    },
+    {
+      "text": "Live site",
+      "url": "https://twigg.gg/playground/"
+    }
+  ]
+}

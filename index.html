@@ -1,82 +1,32 @@
 <!DOCTYPE html>
-<html lang="en" class="blue-hour">
-
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="Description" content="hannah's website." />
-  <link rel="apple-touch-icon" sizes="180x180" href="./public/favicon/apple-touch-icon.png" />
-  <link rel="icon" type="image/png" sizes="32x32" href="./public/favicon/favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="./public/favicon/favicon-16x16.png" />
-  <base href="/" />
-  <title>twigg</title>
-  <link rel="stylesheet" href="./src/styles/themes.css" title="themes">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
-  <script type="module" src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-  <script type="text/javascript">
-    // This little script is used to trick github pages into hosting single page apps.
-    // It's used along with the custom 404.html page in this repo, which redirects. For more info, 
-    // see https://www.smashingmagazine.com/2016/08/sghpa-single-page-app-hack-github-pages/
-    (function () {
-      var redirect = sessionStorage.redirect;
-      delete sessionStorage.redirect;
-      if (redirect && redirect != location.href) {
-        history.replaceState(null, null, redirect);
-      }
-    })();
-  </script>
-</head>
-<style>
-  @font-face {
-    font-family: "Inter";
-    src: url("./public/fonts/Inter-Variable.ttf");
-    font-weight: 1 999;
-  }
-
-  @font-face {
-    font-family: "Arista";
-    src: url("./public/fonts/Arista.ttf");
-    font-weight: 1 999;
-  }
-
-  @font-face {
-    font-family: "Inconsolata";
-    src: url("./public/fonts/Inconsolata-Variable.ttf");
-    font-weight: 1 999;
-  }
-
-  :root {
-    --cursor-default: url("./public/cursor/cursor.cur");
-    --cursor-pointer: url("./public/cursor/pointer.cur");
-    --cursor-move: url("./public/cursor/move.cur");
-    --cursor-beam: url("./public/cursor/beam.cur");
-    font-family: Inter;
-    cursor: var(--cursor-default), auto;
-    background: var(--black);
-    color: var(--white)
-  }
-
-  html,
-  body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    overflow-x: hidden;
-  }
-
-  *,
-  *::before,
-  *::after {
-    box-sizing: border-box;
-  }
-</style>
-
-<body>
-  <noscript>
-    You need to enable JavaScript to run this app.
-  </noscript>
-  <div id="outlet"></div>
-  <script type="module" src="./router.js"></script>
-</body>
-
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="Description" content="hannah's website." />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/favicon/apple-touch-icon.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/favicon/favicon-32x32.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/favicon/favicon-16x16.png" />
+    <title>hannah twigg-smith</title>
+    <link rel="stylesheet" href="src/styles.css" />
+    <script
+      src="https://kit.fontawesome.com/c412915ffb.js"
+      crossorigin="anonymous"></script>
+  </head>
+  <body class="bg-slate-700 text-slate-300 min-h-screen cursor-default">
+    <script type="module" src="src/index.ts"></script>
+  </body>
 </html>

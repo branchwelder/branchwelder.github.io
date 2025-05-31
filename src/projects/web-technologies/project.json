@@ -1,0 +1,12 @@
+{
+  "title": "Web Technologies",
+  "thumbnailSrc": "square.png",
+  "headerSrc": "header.png",
+  "description": "A ten-week, project-based course I developed while at the University of Washington and taught in Winter Quarter 2023. The course was a hands-on introduction to web development which focused on projects that were relevant to the students' interests.",
+  "links": [
+    {
+      "text": "Course Repo",
+      "url": "https://github.com/branchwelder/web-technologies"
+    }
+  ]
+}

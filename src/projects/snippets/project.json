@@ -1,0 +1,16 @@
+{
+  "title": "Snippets",
+  "thumbnailSrc": "snippets.png",
+  "headerSrc": "header.png",
+  "description": "A little CodePen-style editor I made to keep handy JS/HTML/CSS snippets.",
+  "links": [
+    {
+      "text": "Live site",
+      "url": "https://twigg.gg/snippets/"
+    },
+    {
+      "text": "Github",
+      "url": "https://github.com/branchwelder/snippets"
+    }
+  ]
+}

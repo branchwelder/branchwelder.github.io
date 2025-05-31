@@ -1,0 +1,16 @@
+{
+  "title": "#PlotterTwitter Study",
+  "thumbnailSrc": "plottertwitter.jpg",
+  "headerSrc": "teaser.png",
+  "description": "This is a study of a community of plotter artists who share their work on Twitter. This was my first first-author paper, published at CHI 2021.",
+  "links": [
+    {
+      "text": "CHI 2021 paper",
+      "url": "https://dl.acm.org/doi/pdf/10.1145/3411764.3445653"
+    },
+    {
+      "text": "ACM Digital Library",
+      "url": "https://dl.acm.org/doi/abs/10.1145/3411764.3445653"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "title": "WeaveScape",
+  "thumbnailSrc": "weavescape.png",
+  "headerSrc": "header.png",
+  "description": "WeaveScape is a little tool for simulating weaving drafts that I made with Shelby Wilson!",
+  "links": [
+    {
+      "text": "Live Demo",
+      "url": "https://weavescape.net/"
+    },
+    {
+      "text": "Github",
+      "url": "https://github.com/branchwelder/weavescape"
+    },
+    {
+      "text": "Shelby",
+      "url": "https://shelby.cool/"
+    }
+  ]
+}

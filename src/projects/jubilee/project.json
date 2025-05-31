@@ -1,0 +1,20 @@
+{
+  "title": "Jubilee Demos",
+  "thumbnailSrc": "jubilee.jpg",
+  "headerSrc": "demos.jpg",
+  "description": "Jubilee is tool-changing motion platform developed by my former labmate Sonya Vasquez. I helped build some of the demos that were featured in our CHI 2020 paper.",
+  "links": [
+    {
+      "text": "CHI 2020 paper",
+      "url": "https://dl.acm.org/doi/10.1145/3313831.3376425"
+    },
+    {
+      "text": "Jubilee wiki",
+      "url": "https://jubilee3d.com/index.php?title=Main_Page"
+    },
+    {
+      "text": "Sonya's website",
+      "url": "https://www.doublejumpelectric.com/"
+    }
+  ]
+}

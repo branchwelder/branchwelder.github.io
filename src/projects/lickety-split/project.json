@@ -1,0 +1,16 @@
+{
+  "title": "Lickety Split",
+  "thumbnailSrc": "square.png",
+  "headerSrc": "square.png",
+  "description": "Lickety Split is a little drag-and-drop split layout manager built on top of Split.js. ",
+  "links": [
+    {
+      "text": "Github",
+      "url": "https://github.com/branchwelder/lickety-split"
+    },
+    {
+      "text": "Live demo",
+      "url": "https://twigg.gg/lickety-split/"
+    }
+  ]
+}

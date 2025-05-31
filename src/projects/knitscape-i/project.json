@@ -1,0 +1,24 @@
+{
+  "title": "KnitScape I",
+  "thumbnailSrc": "thumbnail.png",
+  "headerSrc": "header.png",
+  "description": "KnitScape is an ongoing project of mine. This first iteration is a design and simulation tool for knit structures which I developed to better understand slip and tuck colorwork. The paper was published at CHI 2024.",
+  "links": [
+    {
+      "text": "Github repo (2024 archive)",
+      "url": "https://github.com/machineagency/knitscape-2024"
+    },
+    {
+      "text": "Live site",
+      "url": "https://machineagency.github.io/knitscape-2024/"
+    },
+    {
+      "text": "CHI 2024 paper",
+      "url": "https://dl.acm.org/doi/pdf/10.1145/3613904.3642799"
+    },
+    {
+      "text": "ACM Digital Library",
+      "url": "https://dl.acm.org/doi/10.1145/3613904.3642799"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "thumbnailSrc": "autostereogram.jpg",
+  "headerSrc": "first_test.jpg",
+  "title": "Autostereogram knits",
+  "description": "I made a little tool for generating autostereograms (the magic eye illusion) from a depth map, and then knit them.",
+  "links": [
+    {
+      "text": "Github repo",
+      "url": "https://github.com/branchwelder/autostereogram"
+    }
+  ]
+}

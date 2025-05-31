@@ -1,0 +1,16 @@
+{
+  "title": "Favicon Designer",
+  "thumbnailSrc": "favicon.png",
+  "headerSrc": "favicon_app.png",
+  "description": "A tiny tool for designing favicons.",
+  "links": [
+    {
+      "text": "Live site",
+      "url": "https://twigg.gg/favicons/"
+    },
+    {
+      "text": "Github",
+      "url": "https://github.com/branchwelder/favicons"
+    }
+  ]
+}

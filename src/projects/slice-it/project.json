@@ -1,0 +1,12 @@
+{
+  "title": "Slice-it",
+  "thumbnailSrc": "moose.jpg",
+  "headerSrc": "team.JPG",
+  "description": "Slice-it was my undergraduate senior capstone project at Olin College, which was sponsored by Solidworks Apps for Kids.",
+  "links": [
+    {
+      "text": "Blog post",
+      "url": "https://blogs.solidworks.com/teacher/2017/11/students-olin-college-apps-kids-team-host-paper-craft-activity.html"
+    }
+  ]
+}

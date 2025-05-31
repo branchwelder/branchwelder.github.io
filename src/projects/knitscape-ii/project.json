@@ -1,0 +1,29 @@
+{
+  "title": "KnitScape II",
+  "thumbnailSrc": "blended-primitives.png",
+  "headerSrc": "teaser.png",
+  "longTitle": "KnitScape II: Raster + vector editing of knitting patterns",
+  "description": "KnitScape is an ongoing project of mine. This version enables you to edit a knitting pattern by drawing layered vector boundaries and paths and applying raster stitch fills and strokes. Any edits regenerate the yarn topology and update the visualization. A paper was published at UIST 2024.",
+  "links": [
+    {
+      "text": "Project Page",
+      "url": "https://machineagency.github.io/projects/blended-primitives/"
+    },
+    {
+      "text": "Live Demo (chrome only)",
+      "url": "https://machineagency.github.io/blended-primitives/"
+    },
+    {
+      "text": "Github Repo (2024 archive)",
+      "url": "https://github.com/machineagency/blended-primitives"
+    },
+    {
+      "text": "UIST 2024 Paper",
+      "url": "https://dl.acm.org/doi/pdf/10.1145/3654777.3676351"
+    },
+    {
+      "text": "ACM Digital Library",
+      "url": "https://dl.acm.org/doi/10.1145/3654777.3676351"
+    }
+  ]
+}

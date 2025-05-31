@@ -24,9 +24,12 @@ export function resolveProjectPaths(
 ): Project {
   return {
     ...project,
-    thumbnailSrc: `/src/projects/${projectDir}/${project.thumbnailSrc}`,
+    thumbnailSrc: new URL(
+      `./${projectDir}/${project.thumbnailSrc}`,
+      import.meta.url
+    ).href,
     headerSrc: project.headerSrc
-      ? `/src/projects/${projectDir}/${project.headerSrc}`
+      ? new URL(`./${projectDir}/${project.headerSrc}`, import.meta.url).href
       : undefined,
   };
 }
